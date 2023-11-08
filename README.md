@@ -3,11 +3,11 @@
 Implemente en Java un programa que simule una cola de impresión utilizando el TDA  Montículo Binario.  Las primitivas de este tipo de datos abstracto son: insertar y eliminar_min.
 
 	A continuación los requerimientos de la solución:
-El programa debe poseer una interfaz gráfica.
-El programa permitirá agregar un usuario en la simulación, el cual tendrá un identificador (nombre de usuario) y un tipo. Cada tipo de usuario se le asignará un nivel de prioridad que podría ser utilizado para disminuir los tiempos de espera de los documentos que este envíe a la cola de impresión.
-El programa deberá ofrecer la posibilidad de cargar a los usuarios desde un archivo “.CSV”
+- El programa debe poseer una interfaz gráfica.
+- El programa permitirá agregar un usuario en la simulación, el cual tendrá un identificador (nombre de usuario) y un tipo. Cada tipo de usuario se le asignará un nivel de prioridad que podría ser utilizado para disminuir los tiempos de espera de los documentos que este envíe a la cola de impresión.
+- El programa deberá ofrecer la posibilidad de cargar a los usuarios desde un archivo “.CSV”
 
-El formato del archivo debe ser como se indica a continuación: 
+- El formato del archivo debe ser como se indica a continuación: 
 
 usuario, tipo
 
