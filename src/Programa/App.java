@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Programa;
-
+import ManejoArchivo.ManejoArchivo;
 /**
  *
  * @author Gabriel
@@ -15,7 +15,8 @@ public class App {
     }
 
     public void inicio(){
-        
+        ManejoArchivo manejoArchivo=new ManejoArchivo();
+        manejoArchivo.lecturaArchivo();
     }
 }
 
