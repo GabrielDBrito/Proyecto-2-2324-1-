@@ -10,9 +10,13 @@ El programa deberá ofrecer la posibilidad de cargar a los usuarios desde un arc
 El formato del archivo debe ser como se indica a continuación: 
 
 usuario, tipo
+
 Jperez, prioridad_alta
+
 m_himiot_alfaro, prioridad_media
+
 yurdaneta_1, prioridad_baja
+
 …
 
 
