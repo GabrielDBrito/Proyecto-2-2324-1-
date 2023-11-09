@@ -32,7 +32,7 @@ public class ManejoArchivo {
     luego, guardar la informacion de dicho archivo en una lista
     
     */
-    public void lecturaArchivo(){
+    public ListaG lecturaArchivo(){
         
         try{
             // Creamos el JFileChooser
@@ -59,12 +59,15 @@ public class ManejoArchivo {
                 }
                 lector.close();
                 linea=null;
-                usuarios.print();
+                return usuarios;
+                
         } else{
             JOptionPane.showMessageDialog(null, "Error en la lectura del archivo");
             }
+            return null;
         }catch(HeadlessException | IOException e){
             JOptionPane.showMessageDialog(null, "Error en la lectura del archivo");
+            return null;
         }
     }
 }
