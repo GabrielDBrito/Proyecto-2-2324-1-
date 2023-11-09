@@ -3,69 +3,115 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package MonticuloBinario;
-import EDD.Nodo;
 /**
  *
- * @author luis
+ * @author Gabriel
+ * versio: 09/11/23
  */
 public class MonticuloBinario {
-    private T[] arreglo;
-    private int cima;
+    private Nodo root;
+
+    public MonticuloBinario() {
+        root = null;
+    }
+
+    public Nodo getRoot() {
+        return root;
+    }
+
+    public void setRoot(Nodo root) {
+        this.root = root;
+    }
     
-    public MonticuloBinario(int tamaño){
-        arreglo = new T[tamaño];
-        cima=0;
+    /**
+     * Realiza rotación hacia la derecha
+     * @param y
+     * @return
+     */
+    private Nodo RotarDerecha(Nodo y) {
+        Nodo x = y.getLeft();
+        Nodo T2 = x.getRight();
+
+        x.setRight(y);
+        y.setLeft(T2) ;
+
+        return x;
     }
-    //insertar()agrega una nueva impresion al monticulo binario. Se inserta la impresion al final del arreglo
-    public void insertar(Impresion impresion){
-        arreglo[cima++] = impresion;
-        burbujaArriba(cima -1);
+    
+    /**
+     * Realiza rotación hacia la izquierda
+     * @param x 
+     * @return 
+     */
+    private Nodo RotarIzquierda(Nodo x) {
+        Nodo y = x.getRight();
+        Nodo T2 = y.getLeft();
+
+        y.setLeft(x);
+        x.setRight(T2);
+
+        return y;
     }
-    //eliminarMin()elimina la impresion con el identificador mas pequeño del monticulo binario. 
-    //Se intercambia la impresion de la cima del monticulo con la impresion del ultimo elemento del arreglo
-    public T eliminarMin(){
-        if (cima ==0){
-            return null;
+    
+    /**
+     * Funcion que ordena el monticulo para que se mantenga correctamente como un montículo por mínimos
+     * @param root 
+     */
+    private void ordenar(Nodo root) {
+        if (root == null)
+            return;
+
+        if (root.getLeft() != null && root.getLeft().getNumero() < root.getNumero())
+            root = RotarDerecha(root);
+
+        if (root.getRight() != null && root.getRight().getNumero() < root.getNumero())
+            root = RotarIzquierda(root);
+
+        ordenar(root.getLeft());
+        ordenar(root.getRight());
+    }
+    
+    /**
+     * Función para insertar un nuevo elemento en el monticulo
+     * @param numero 
+     * @param usuario
+     */
+    public void insertar(int numero, String usuario) {
+        Nodo newNode = new Nodo (numero, usuario);
+
+        if (root == null) {
+            root = newNode;
+            return;
         }
-        T impresion = arreglo[0];
-        arreglo[0] = arreglo[--cima];
-        burbujaAbajo(0);
-        return impresion;
-        
-    }
-    //burbujaArriba se utiliza para mantener las propiedades del monticulo despues de insertar una nueva inpresion
-    private void burbujaArriba(int nodo){
-        while (nodo >0 && arreglo[nodo].getId()<arreglo[(nodo -1)/ 2].getId()){
-            intercambiar(nodo, ( nodo-1)/2);
-            nodo = (nodo-1)/2;
-        }
-    }
-    //burbujaAbajo se utiliza para mantener las propiedades del monticulo despues de eliminar la impresion con el identificador mas pequeño
-    private void burbujaAbajo(int nodo){
-        while (2 * nodo + 1 < cima){
-            int leftSon = 2* nodo +1;
-            int rightSon = 2* nodo +2;
-            
-            if (rightSon < cima && arreglo[rightSon].getId() < arreglo[leftSon].getId()){
-                leftSon= rightSon;
+
+        Nodo currentNode = root;
+        Nodo parentNode = null;
+
+        while (true) {
+            parentNode = currentNode;
+
+            if (newNode.getNumero() > currentNode.getNumero()) {
+                currentNode = currentNode.getLeft();
+                if (currentNode == null) {
+                    parentNode.setLeft(newNode);
+                    break;
+                }
+            } else {
+                currentNode = currentNode.getRight();
+                if (currentNode == null) {
+                    parentNode.setRight(newNode);
+                    break;
+                }
             }
-            if (arreglo[nodo].getId()>arreglo[leftSon].getId()){
-                intercambiar(nodo,leftSon);
-                nodo=leftSon;
-                
-            }else{
-                return;
-            }
         }
+
+        ordenar(root);
     }
     
+    public Nodo searchByUser(String usuario) {
+        Nodo currentNode = root;
+
     
-    
-    
-    
-    private void intercambiar(int nodo1, int nodo2) {
-        Impresion temp = arreglo[nodo1];
-        arreglo[nodo1] = arreglo[nodo2];
-        arreglo[nodo2] = temp;
-    }
+
+        return null;
 }
