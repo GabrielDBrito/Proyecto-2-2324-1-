@@ -4,6 +4,7 @@
  */
 package Programa;
 import ManejoArchivo.ManejoArchivo;
+import MonticuloBinario.MonticuloBinario;
 /**
  *
  * @author Gabriel
@@ -15,8 +16,16 @@ public class App {
     }
 
     public void inicio(){
-        ManejoArchivo manejoArchivo=new ManejoArchivo();
-        manejoArchivo.lecturaArchivo();
+       // ManejoArchivo manejoArchivo=new ManejoArchivo();
+       //manejoArchivo.lecturaArchivo();
+       
+       MonticuloBinario monticulo= new MonticuloBinario();
+       monticulo.nuevoUsuario("gabriel");
+       monticulo.nuevoUsuario("gabriel");
+       monticulo.nuevoUsuario("gabriel");
+       monticulo.nuevoUsuario("gabriel");
+       monticulo.preOrden(monticulo.getRoot());
+       
     }
 }
 

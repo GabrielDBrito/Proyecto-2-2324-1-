@@ -7,18 +7,15 @@ package EDD;
 /**
  *
  * @author Gabriel
- * version 08/11/23
  */
-public class Nodo {
+public class NodoArray {
     private Object element;
-    private Nodo next;
+    private Integer next;
 
-    public Nodo(Object element) {
-   
-        this.element=element;
-        this.next=null;
-        
-    }   
+    public NodoArray(Object element) {
+        this.element = element;
+        this.next = null;
+    }
 
     public Object getElement() {
         return element;
@@ -28,13 +25,12 @@ public class Nodo {
         this.element = element;
     }
 
-    public Nodo getNext() {
+    public Integer getNext() {
         return next;
     }
 
-    public void setNext(Nodo element) {
-        this.next = element;
-    }  
-    
-}
+    public void setNext(Integer next) {
+        this.next = next;
+    }
+}   
 

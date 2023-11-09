@@ -9,7 +9,7 @@ package EDD;
  * @author Gabriel
  * version 08/11/23
  */
-public class BST {
+/*public class BST {
     private Nodo root;
 
     public BST() {
@@ -118,3 +118,4 @@ public class BST {
         }
     }
 }
+*/
