@@ -10,12 +10,20 @@ package MonticuloBinario;
  * esta clase representa  una impresion del identificador y el documento que se debe imprimir 
  * 9/11/2023
  */
-public class Impresion {
+public class Impresion  implements Comparable<Impresion> {
     private int id;
     private String documento;
 
     public Impresion(int id, String documento) {
         this.id = id;
+        this.documento = documento;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setDocumento(String documento) {
         this.documento = documento;
     }
 
@@ -32,5 +40,10 @@ public class Impresion {
                 "id="+ id +
                 ", documento='" + documento + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Impresion impresion) {
+        return this.id - impresion.id;
     }
 }
