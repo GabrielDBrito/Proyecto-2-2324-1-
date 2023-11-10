@@ -9,27 +9,27 @@ import EDD.Nodo;
  * @author luis
  */
 public class MonticuloBinario< T extends Comparable<T>>{
-    private T[] arreglo;
-    private int cima;
+    private Impresion[] arreglo;
+    public int cima;
 
     public MonticuloBinario(int tamaño) {
-        arreglo = new T[tamaño];
+        arreglo = new Impresion[tamaño];
         cima = 0;
     }
 
     //insertar()agrega una nueva impresion al monticulo binario. Se inserta la impresion al final del arreglo
     public void insertar(Impresion impresion) {
-        arreglo[cima++] = impresion;
+        arreglo[cima] = impresion;
         burbujaArriba(cima - 1);
     }
 
     //eliminarMin()elimina la impresion con el identificador mas pequeño del monticulo binario. 
     //Se intercambia la impresion de la cima del monticulo con la impresion del ultimo elemento del arreglo
-    public T eliminarMin() {
+    public Impresion eliminarMin() {
         if (cima == 0) {
             return null;
         }
-        T impresion = arreglo[0];
+        Impresion impresion = arreglo[0];
         arreglo[0] = arreglo[--cima];
         burbujaAbajo(0);
         return impresion;
@@ -62,7 +62,7 @@ public class MonticuloBinario< T extends Comparable<T>>{
     }
 
     private void intercambiar(int nodo1, int nodo2) {
-        T temp = arreglo[nodo1];
+        Impresion temp = arreglo[nodo1];
         arreglo[nodo1] = arreglo[nodo2];
         arreglo[nodo2] = temp;
     }
