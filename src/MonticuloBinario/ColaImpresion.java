@@ -10,13 +10,13 @@ package MonticuloBinario;
  */
 public class ColaImpresion<T> {
     
-    private MonticuloBinario<T> monticulo;
+    private MonticuloBinario<Impresion> monticulo;
 
     public ColaImpresion(int tamaño) {
         monticulo = new MonticuloBinario<>(tamaño);
     }
 
-    public void insertar(T impresion) {
+    public void insertar(Impresion impresion) {
         monticulo.insertar(impresion);
     }
 
