@@ -53,7 +53,6 @@ public class ListaArray{
         this.array = array;
     }
 
-    @Override
     public void insertBegin(Object element) {
         NodoArray nodo = new NodoArray(element);
         if (isEmpty()) {
@@ -97,12 +96,10 @@ public class ListaArray{
         return -1;
     }
 
-    @Override
     public void insertFinal(Object element) {
         
     }
 
-    @Override
     public void insertAtIndex(Object element, int index) {
         NodoArray nodo = new NodoArray(element);
         if (isEmpty()) {
@@ -150,8 +147,7 @@ public class ListaArray{
         }
         
     }
-
-    @Override
+    
     public NodoArray deleteBegin() {
         if(isEmpty()) {
             System.out.println("The list is empty");
@@ -167,17 +163,17 @@ public class ListaArray{
         return null;
     }
 
-    @Override
+
     public NodoArray deleteFinal() {
         return null;
     }
 
-    @Override
+
     public NodoArray deleteAtIndex(int index) {
         return null;
     }
 
-    @Override
+
     public boolean isEmpty() {
         return getHead() == null;
     }
@@ -199,4 +195,4 @@ public class ListaArray{
     
     
 }
-}
+
