@@ -8,12 +8,12 @@ package Interfaces;
  *
  * @author cesar
  */
-public class ModificarCola extends javax.swing.JFrame {
+public class Eliminar extends javax.swing.JFrame {
 
     /**
-     * Creates new form ModificarCola
+     * Creates new form Eliminar
      */
-    public ModificarCola() {
+    public Eliminar() {
         initComponents();
     }
 
@@ -27,29 +27,25 @@ public class ModificarCola extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        Agregar = new javax.swing.JButton();
-        Eliminar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        NombreUsuario = new javax.swing.JTextField();
         Menu = new javax.swing.JButton();
+        Eliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Agregar.setText("Agregar");
-        jPanel2.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 210, 30));
-
-        Eliminar.setText("Eliminar");
-        jPanel2.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 210, 30));
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel1.setText("Ingrese el nombre: ");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 130, 20));
+        jPanel1.add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 590, -1));
 
         Menu.setText("Menu");
-        jPanel2.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 100, -1));
+        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 370, 70, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 460));
+        Eliminar.setText("Eliminar");
+        jPanel1.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 100, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,29 +78,29 @@ public class ModificarCola extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ModificarCola.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ModificarCola.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ModificarCola.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ModificarCola.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Eliminar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ModificarCola().setVisible(true);
+                new Eliminar().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Agregar;
     private javax.swing.JButton Eliminar;
     private javax.swing.JButton Menu;
+    private javax.swing.JTextField NombreUsuario;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
