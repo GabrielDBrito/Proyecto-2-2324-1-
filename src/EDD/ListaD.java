@@ -51,38 +51,38 @@ public class ListaD {
     public void insertFinal(Documento documento) {
         NodoD nodod =new NodoD(documento);
         if (isEmpty()){
-            setHead(nodoG);
+            setHead(nodod);
         }
         else{
-            NodoG pointer=getHead();
+            NodoD pointer=getHead();
             while (pointer.getNext()!=null){
                 pointer=pointer.getNext();
             }
-            pointer.setNext(nodoG);
+            pointer.setNext(nodod);
         }
         length++;
     }
 
     
-    public void insertAtIndex(String usuario, String tipo, int index){
-        NodoG nodoG =new NodoG(usuario, tipo);
+    public void insertAtIndex(Documento documento, int index){
+        NodoD nodod =new NodoD(documento);
         if (isEmpty() || index==0){
-        insertBegin(usuario,tipo);
+        insertBegin(documento);
         }
         else {
             if (index<length){
-                NodoG pointer=getHead();
+                NodoD pointer=getHead();
                 int cont=0;
                 while (cont<index-1){
                     pointer=pointer.getNext();
                     cont++;
                 }
-                nodoG.setNext(pointer.getNext());
-                pointer.setNext(nodoG);
+                nodod.setNext(pointer.getNext());
+                pointer.setNext(nodod);
                 length++;
             } 
             else if (index==length){
-                insertFinal(usuario, tipo);
+                insertFinal(documento);
             } 
             else {
                 System.out.println("Index not valid");
@@ -91,13 +91,13 @@ public class ListaD {
     }
 
     
-    public NodoG deleteBegin() {
+    public NodoD deleteBegin() {
         if (isEmpty()){
             System.out.println("La lista ya esta vacia");
             return null;
         }
         else{
-            NodoG temp=getHead();
+            NodoD temp=getHead();
             setHead(temp.getNext());
             temp.setNext(null);
             length--;
@@ -107,17 +107,17 @@ public class ListaD {
 
    
     
-    public NodoG deleteFinal() {
+    public NodoD deleteFinal() {
         if (isEmpty()){
             System.out.println("La lista ya esta vacia");
             return null;
         }
         else{
-            NodoG pointer=getHead();
+            NodoD pointer=getHead();
             while(pointer.getNext().getNext()!=null){
                 pointer=pointer.getNext();
             }
-            NodoG temp=pointer.getNext();
+            NodoD temp=pointer.getNext();
             pointer.setNext(null);
             length--;
             return temp;
@@ -125,7 +125,7 @@ public class ListaD {
     }
 
     
-    public NodoG deleteAtIndex(int index) {
+    public NodoD deleteAtIndex(int index) {
         if (isEmpty()){
             System.out.println("La lista ya esta vacia");
             return null;
@@ -136,13 +136,13 @@ public class ListaD {
             }
             else{
                 if (index<getLength()){
-                    NodoG pointer=getHead();
+                    NodoD pointer=getHead();
                     int cont=0;
                     while(cont<index-1){
                         pointer=pointer.getNext();
                         cont++;
                     }
-                    NodoG temp=pointer.getNext();
+                    NodoD temp=pointer.getNext();
                     pointer.setNext(temp.getNext());
                     temp.setNext(null);
                     length--;
@@ -167,7 +167,7 @@ public class ListaD {
     }
     
     public void print() {
-        NodoG pointer=getHead();
+        NodoD pointer=getHead();
         while (pointer!=null){
             pointer.print();
             pointer=pointer.getNext();

@@ -1,4 +1,7 @@
 package EDD;
+
+import MonticuloBinario.Usuario;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -8,33 +11,26 @@ package EDD;
  *
  * @author Gabriel
  * version 27/10/23
+ * Nodo que almacena usuarios
  */
 public class NodoG {
     private NodoG next;
-    private String usuario;
-    private String tipo;
+    private Usuario usuario;
 
-    public NodoG(String usuario, String tipo) {
+    public NodoG(Usuario usuario) {
         this.usuario = usuario;
-        this.tipo = tipo;
         this.next = null;
     }
 
-    public String getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(String usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
 
     public NodoG getNext() {
         return next;
@@ -46,7 +42,12 @@ public class NodoG {
     
     public void print(){
         System.out.println("-------------------------");
-        System.out.println("Usuario: "+usuario+"\nTipo: "+tipo);
+        System.out.println("Usuario: "+usuario.getNombre()+"\nTipo: "+usuario.getTipo()+"\nDocumentos: ");
+        NodoD pointer=usuario.getDocumentos().getHead();
+        while(pointer!=null){
+            pointer.print();
+            pointer=pointer.getNext();
+        }
         System.out.println("-------------------------");
     }
 

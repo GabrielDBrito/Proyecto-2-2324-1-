@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import javax.swing.JOptionPane;
 import EDD.ListaG;
+import MonticuloBinario.Usuario;
 import java.awt.HeadlessException;
      
 /**
@@ -54,7 +55,8 @@ public class ManejoArchivo {
                 ListaG usuarios=new ListaG();
                 while((linea=lector.readLine())!=null){
                     partes=linea.split(",");
-                    usuarios.insertFinal(partes[0],partes[1]); //se guarda la informacion en una lista
+                    Usuario usuario=new Usuario(partes[0],partes[1]);
+                    usuarios.insertFinal(usuario); //se guarda la informacion en una lista
                     partes=null;
                 }
                 lector.close();

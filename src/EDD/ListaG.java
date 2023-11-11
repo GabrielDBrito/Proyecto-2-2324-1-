@@ -4,10 +4,13 @@
  */
 package EDD;
 
+import MonticuloBinario.Usuario;
+
 /**
  *
  * @author Gabriel
- * version 13/10/23
+ * version 13/11/23
+ * Lista de usuarios
  */
 public class ListaG {
     private NodoG head;
@@ -34,8 +37,8 @@ public class ListaG {
         this.length = length;
     }
     
-    public void insertBegin(String usuario, String tipo) {
-        NodoG nodoG =new NodoG(usuario, tipo);
+    public void insertBegin(Usuario usuario) {
+        NodoG nodoG =new NodoG(usuario);
         if (isEmpty()){
         setHead(nodoG);
         }
@@ -46,8 +49,8 @@ public class ListaG {
         length++;
     }
 
-    public void insertFinal(String usuario, String tipo) {
-        NodoG nodoG =new NodoG(usuario, tipo);
+    public void insertFinal(Usuario usuario) {
+        NodoG nodoG =new NodoG(usuario);
         if (isEmpty()){
             setHead(nodoG);
         }
@@ -62,10 +65,10 @@ public class ListaG {
     }
 
     
-    public void insertAtIndex(String usuario, String tipo, int index){
-        NodoG nodoG =new NodoG(usuario, tipo);
+    public void insertAtIndex(Usuario usuario, int index){
+        NodoG nodoG =new NodoG(usuario);
         if (isEmpty() || index==0){
-        insertBegin(usuario,tipo);
+        insertBegin(usuario);
         }
         else {
             if (index<length){
@@ -80,7 +83,7 @@ public class ListaG {
                 length++;
             } 
             else if (index==length){
-                insertFinal(usuario, tipo);
+                insertFinal(usuario);
             } 
             else {
                 System.out.println("Index not valid");
@@ -172,11 +175,11 @@ public class ListaG {
         }
     }
     
-    /*borrar nodo por id
-    *@param id
+    /*borrar nodo por nombre
+    *@param nombre
     *@return
     */
-   /* public NodoG deleteById(String id){
+    public NodoG borrarPorNombre(String nombre){
         if (isEmpty()){
             return null;     
         }else{
@@ -184,7 +187,7 @@ public class ListaG {
             int cont=0;
             NodoG temp=null;
             while(pointer!=null){
-                if (pointer.getUsuario().getId().equalsIgnoreCase(id)){
+                if (pointer.getUsuario().getNombre().equalsIgnoreCase(nombre)){
                     temp=pointer;
                     break;
                 }
@@ -198,5 +201,5 @@ public class ListaG {
                 return null;
             }
         }     
-    }/*/
+    }
 }

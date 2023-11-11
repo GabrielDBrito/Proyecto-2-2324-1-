@@ -16,9 +16,9 @@ public class App {
     }
 
     public void inicio(){
-       // ManejoArchivo manejoArchivo=new ManejoArchivo();
-       //manejoArchivo.lecturaArchivo();
-
+       MonticuloBinario monticulo=new MonticuloBinario(100);
+       monticulo.crearUsuariosArchivo();
+       
     }
 }
 

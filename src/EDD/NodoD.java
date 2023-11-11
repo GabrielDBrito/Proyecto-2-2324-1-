@@ -37,9 +37,9 @@ public class NodoD {
     }
     
     public void print(){
-        System.out.println("-------------------------");
+        System.out.println(" ");
         System.out.println("Nombre: "+documento.getNombre()+"\nDimension: "+documento.getDimension()+"\nPrioridad: "+documento.getPrioridad());
-        System.out.println("-------------------------");
+        
     }
     
 }
