@@ -5,6 +5,7 @@
 package MonticuloBinario;
 
 import EDD.ListaD;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -47,7 +48,12 @@ public class Usuario {
         this.documentos = documentos;
     }
     
-    
-    
-    
+    /*
+    Crea un documento y lo agrega a la lista de documentos del usuario
+    */
+    public void crearDocumento(String nombre, int dimension){
+        Documento documento=new Documento(nombre, dimension, getTipo());
+        getDocumentos().insertFinal(documento);
+        JOptionPane.showMessageDialog(null, "Documento creado con exito");
+    }   
 }
