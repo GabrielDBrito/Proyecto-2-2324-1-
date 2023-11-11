@@ -28,6 +28,12 @@ public class App {
        nodo.getUsuario().crearDocumento("documento3", 8);
        monticulo.getUsuarios().print();
        
+       /*
+       para acceder al documento
+       NodoG nodo =monticulo.buscarPorNombre("nombre del usuario");
+       Documento documento =nodo.getUsuario().buscarDocumento("nombre del documento");
+       */
+       
     }
 }
 

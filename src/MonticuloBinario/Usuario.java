@@ -5,6 +5,7 @@
 package MonticuloBinario;
 
 import EDD.ListaD;
+import EDD.NodoD;
 import javax.swing.JOptionPane;
 
 /**
@@ -47,6 +48,22 @@ public class Usuario {
     public void setDocumentos(ListaD documentos) {
         this.documentos = documentos;
     }
+    
+    /*
+    Busca un documento por el nombre en la lista de documentos del usuario
+    */
+    public Documento buscarDocumento(String nombre){
+        
+        NodoD pointer=documentos.getHead();
+        NodoD encontrado=null;
+        while (pointer!=null){
+            if (pointer.getDocumento().getNombre().equalsIgnoreCase(nombre)){
+                encontrado=pointer;}
+            pointer=pointer.getNext();
+        }
+        return encontrado.getDocumento();
+    }
+    
     
     /*
     Crea un documento y lo agrega a la lista de documentos del usuario
