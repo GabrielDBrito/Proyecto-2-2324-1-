@@ -9,12 +9,17 @@ package Interfaces;
  * @author cesar
  */
 public class Eliminar extends javax.swing.JFrame {
+    public static ModificarCola v3;
 
     /**
      * Creates new form Eliminar
      */
-    public Eliminar() {
+    public Eliminar(ModificarCola v3) {
         initComponents();
+        this.v3=v3;
+        v3.setVisible(false);
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -42,6 +47,11 @@ public class Eliminar extends javax.swing.JFrame {
         jPanel1.add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 590, -1));
 
         Menu.setText("Menu");
+        Menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuActionPerformed(evt);
+            }
+        });
         jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 370, 70, -1));
 
         Eliminar.setText("Eliminar");
@@ -60,6 +70,12 @@ public class Eliminar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
+        Menu menu = new Menu();
+        this.setVisible(false);
+        menu.setVisible(true);
+    }//GEN-LAST:event_MenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -91,7 +107,7 @@ public class Eliminar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Eliminar().setVisible(true);
+                new Eliminar(v3).setVisible(true);
             }
         });
     }

@@ -15,6 +15,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        this.setVisible(true);
     }
 
     /**
@@ -45,6 +46,11 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(CargarArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 180, -1));
 
         ModificarCola.setText("Modificar Cola");
+        ModificarCola.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModificarColaActionPerformed(evt);
+            }
+        });
         jPanel1.add(ModificarCola, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 180, -1));
 
         MostrarCola.setText("Cola de Impresion");
@@ -75,6 +81,10 @@ public class Menu extends javax.swing.JFrame {
     private void EXITActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITActionPerformed
         this.dispose();
     }//GEN-LAST:event_EXITActionPerformed
+
+    private void ModificarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarColaActionPerformed
+        ModificarCola v3 = new ModificarCola(this);
+    }//GEN-LAST:event_ModificarColaActionPerformed
 
     /**
      * @param args the command line arguments

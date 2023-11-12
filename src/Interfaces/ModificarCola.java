@@ -9,12 +9,16 @@ package Interfaces;
  * @author cesar
  */
 public class ModificarCola extends javax.swing.JFrame {
+    
+    public static Menu v1;
 
-    /**
-     * Creates new form ModificarCola
-     */
-    public ModificarCola() {
+
+    public ModificarCola(Menu v1) {
         initComponents();
+        this.v1=v1;
+        v1.setVisible(false);
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -41,9 +45,19 @@ public class ModificarCola extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Agregar.setText("Agregar");
+        Agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarActionPerformed(evt);
+            }
+        });
         jPanel2.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 210, 30));
 
         Eliminar.setText("Eliminar");
+        Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarActionPerformed(evt);
+            }
+        });
         jPanel2.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 210, 30));
 
         Menu.setText("Menu");
@@ -64,6 +78,15 @@ public class ModificarCola extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
+        Agregar v4 = new Agregar(this);
+    }//GEN-LAST:event_AgregarActionPerformed
+
+    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
+        Eliminar v5 = new Eliminar(this);
+        
+    }//GEN-LAST:event_EliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,7 +118,7 @@ public class ModificarCola extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ModificarCola().setVisible(true);
+                new ModificarCola(v1).setVisible(true);
             }
         });
     }

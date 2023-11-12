@@ -4,12 +4,14 @@
  */
 package Programa;
 
+import java.io.IOException;
+
 /**
  * @author Gabriel
  * @version: 
  */
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
         App app = new App();
         app.inicio();
     }   
