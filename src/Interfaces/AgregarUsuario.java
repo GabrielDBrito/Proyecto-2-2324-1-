@@ -8,14 +8,13 @@ package Interfaces;
  *
  * @author cesar
  */
-public class Menu extends javax.swing.JFrame {
+public class AgregarUsuario extends javax.swing.JFrame {
 
     /**
-     * Creates new form Menu
+     * Creates new form AgregarUsuario
      */
-    public Menu() {
+    public AgregarUsuario() {
         initComponents();
-        this.setVisible(true);
     }
 
     /**
@@ -28,50 +27,47 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        CargarArchivo = new javax.swing.JButton();
-        ModificarCola = new javax.swing.JButton();
-        MostrarCola = new javax.swing.JButton();
-        EXIT = new javax.swing.JButton();
-        Usuarios = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        NombreUsuario = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        TipoPrioridad = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        Menu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Pacific Blue Business Industry Logo  (1).png"))); // NOI18N
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 180, 180));
+        jLabel1.setText("Ingrese el nombre de usuario:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
 
-        CargarArchivo.setText("Cargar Archivo");
-        jPanel1.add(CargarArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 180, -1));
-
-        ModificarCola.setText("Modificar Cola");
-        ModificarCola.addActionListener(new java.awt.event.ActionListener() {
+        NombreUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ModificarColaActionPerformed(evt);
+                NombreUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(ModificarCola, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 180, -1));
+        jPanel1.add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 440, -1));
 
-        MostrarCola.setText("Cola de Impresion");
-        jPanel1.add(MostrarCola, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, 180, -1));
+        jLabel2.setText("Ingrese el tipo de prioridad: (Formato: prioridad_alta/media/baja)");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+        jPanel1.add(TipoPrioridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 610, -1));
 
-        EXIT.setText("Salir");
-        EXIT.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Agregar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EXITActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(EXIT, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 400, 70, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 90, -1));
 
-        Usuarios.setText("Usuarios");
-        Usuarios.addActionListener(new java.awt.event.ActionListener() {
+        Menu.setText("Menu");
+        Menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuariosActionPerformed(evt);
+                MenuActionPerformed(evt);
             }
         });
-        jPanel1.add(Usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 180, -1));
+        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(774, 400, 90, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,17 +83,17 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void EXITActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_EXITActionPerformed
-
-    private void ModificarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarColaActionPerformed
-        ModificarCola v3 = new ModificarCola(this);
-    }//GEN-LAST:event_ModificarColaActionPerformed
-
-    private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
+    private void NombreUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UsuariosActionPerformed
+    }//GEN-LAST:event_NombreUsuarioActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,31 +112,31 @@ public class Menu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                new AgregarUsuario().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CargarArchivo;
-    private javax.swing.JButton EXIT;
-    private javax.swing.JButton ModificarCola;
-    private javax.swing.JButton MostrarCola;
-    private javax.swing.JButton Usuarios;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton Menu;
+    private javax.swing.JTextField NombreUsuario;
+    private javax.swing.JTextField TipoPrioridad;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
