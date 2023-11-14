@@ -65,6 +65,11 @@ public class ModificarCola extends javax.swing.JFrame {
         jPanel2.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 210, 30));
 
         Menu.setText("Menu");
+        Menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuActionPerformed(evt);
+            }
+        });
         jPanel2.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 100, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 460));
@@ -91,6 +96,12 @@ public class ModificarCola extends javax.swing.JFrame {
         Eliminar v5 = new Eliminar(this, monticulo);
         
     }//GEN-LAST:event_EliminarActionPerformed
+
+    private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
+        Menu menu = new Menu(monticulo);
+        this.setVisible(false);
+        menu.setVisible(true);
+    }//GEN-LAST:event_MenuActionPerformed
 
     /**
      * @param args the command line arguments

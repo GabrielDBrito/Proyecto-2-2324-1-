@@ -9,12 +9,17 @@ package Interfaces;
  * @author cesar
  */
 public class AgregarUsuario extends javax.swing.JFrame {
+    public static Usuarios v4;
 
     /**
      * Creates new form AgregarUsuario
      */
-    public AgregarUsuario() {
+    public AgregarUsuario(Usuarios v4) {
         initComponents();
+        this.v4=v4;
+        v4.setVisible(false);
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -31,7 +36,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
         NombreUsuario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         TipoPrioridad = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        Agregar = new javax.swing.JButton();
         Menu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -39,6 +44,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel1.setText("Ingrese el nombre de usuario:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
 
@@ -49,17 +55,18 @@ public class AgregarUsuario extends javax.swing.JFrame {
         });
         jPanel1.add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 440, -1));
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel2.setText("Ingrese el tipo de prioridad: (Formato: prioridad_alta/media/baja)");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
         jPanel1.add(TipoPrioridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 610, -1));
 
-        jButton1.setText("Agregar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Agregar.setText("Agregar");
+        Agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                AgregarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 90, -1));
+        jPanel1.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 90, -1));
 
         Menu.setText("Menu");
         Menu.addActionListener(new java.awt.event.ActionListener() {
@@ -84,15 +91,16 @@ public class AgregarUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void NombreUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreUsuarioActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_NombreUsuarioActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
+        String nombre_usuario = NombreUsuario.getText(); 
+        String tipo_prioridad = TipoPrioridad.getText();
+    }//GEN-LAST:event_AgregarActionPerformed
 
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_MenuActionPerformed
 
     /**
@@ -125,16 +133,16 @@ public class AgregarUsuario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AgregarUsuario().setVisible(true);
+                new AgregarUsuario(v4).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Agregar;
     private javax.swing.JButton Menu;
     private javax.swing.JTextField NombreUsuario;
     private javax.swing.JTextField TipoPrioridad;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
