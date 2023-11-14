@@ -18,18 +18,9 @@ public class App {
     }
 
     public void inicio(){
-       Menu ventana = new Menu();
-       ventana.setVisible(true);
        MonticuloBinario monticulo=new MonticuloBinario(100);
-       monticulo.crearUsuariosArchivo();
-       NodoG nodo =monticulo.buscarPorNombre("jperez");
-       nodo.getUsuario().crearDocumento("word", 10);
-       nodo.getUsuario().crearDocumento("excel", 9999);
-       nodo =monticulo.buscarPorNombre("yurdaneta_1");
-       nodo.getUsuario().crearDocumento("registro", 5);
-       nodo =monticulo.buscarPorNombre("santiago_Gonzalez");
-       nodo.getUsuario().crearDocumento("documento3", 8);
-       monticulo.getUsuarios().print();
+       Menu ventana = new Menu(monticulo);
+       ventana.setVisible(true);
        
        /*
        para acceder al documento

@@ -4,6 +4,8 @@
  */
 package Interfaces;
 
+import MonticuloBinario.MonticuloBinario;
+
 /**
  *
  * @author cesar
@@ -11,14 +13,16 @@ package Interfaces;
 public class ModificarCola extends javax.swing.JFrame {
     
     public static Menu v1;
+    static MonticuloBinario monticulo;
 
-
-    public ModificarCola(Menu v1) {
+    public ModificarCola(Menu v1, MonticuloBinario monticulo) {
         initComponents();
         this.v1=v1;
         v1.setVisible(false);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.monticulo=monticulo;
+        
     }
 
     /**
@@ -80,11 +84,11 @@ public class ModificarCola extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
-        Agregar v4 = new Agregar(this);
+        Agregar v4 = new Agregar(this, monticulo);
     }//GEN-LAST:event_AgregarActionPerformed
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
-        Eliminar v5 = new Eliminar(this);
+        Eliminar v5 = new Eliminar(this, monticulo);
         
     }//GEN-LAST:event_EliminarActionPerformed
 
@@ -118,7 +122,7 @@ public class ModificarCola extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ModificarCola(v1).setVisible(true);
+                new ModificarCola(v1, monticulo).setVisible(true);
             }
         });
     }

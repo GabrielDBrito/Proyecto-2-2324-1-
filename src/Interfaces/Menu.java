@@ -4,18 +4,21 @@
  */
 package Interfaces;
 
+import MonticuloBinario.MonticuloBinario;
+
 /**
  *
  * @author cesar
  */
 public class Menu extends javax.swing.JFrame {
-
+    static private MonticuloBinario monticulo;
     /**
      * Creates new form Menu
      */
-    public Menu() {
+    public Menu(MonticuloBinario monticulo) {
         initComponents();
         this.setVisible(true);
+        this.monticulo=monticulo;
     }
 
     /**
@@ -43,6 +46,11 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 180, 180));
 
         CargarArchivo.setText("Cargar Archivo");
+        CargarArchivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CargarArchivoActionPerformed(evt);
+            }
+        });
         jPanel1.add(CargarArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 180, -1));
 
         ModificarCola.setText("Modificar Cola");
@@ -83,8 +91,12 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_EXITActionPerformed
 
     private void ModificarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarColaActionPerformed
-        ModificarCola v3 = new ModificarCola(this);
+        ModificarCola v3 = new ModificarCola(this, monticulo);
     }//GEN-LAST:event_ModificarColaActionPerformed
+
+    private void CargarArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarArchivoActionPerformed
+        monticulo.crearUsuariosArchivo();
+    }//GEN-LAST:event_CargarArchivoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,7 +128,7 @@ public class Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                new Menu(monticulo).setVisible(true);
             }
         });
     }
