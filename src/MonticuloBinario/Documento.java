@@ -12,11 +12,13 @@ public class Documento {
     private String nombre;
     private int dimension;
     private String prioridad;
+    private boolean encolado;
 
     public Documento(String nombre, int dimension, String prioridad) {
         this.nombre = nombre;
         this.dimension = dimension;
         this.prioridad = prioridad;
+        this.encolado=false;
     }
 
     public String getNombre() {
@@ -41,6 +43,14 @@ public class Documento {
 
     public void setPrioridad(String prioridad) {
         this.prioridad = prioridad;
+    }
+
+    public boolean isEncolado() {
+        return encolado;
+    }
+
+    public void setEncolado(boolean encolado) {
+        this.encolado = encolado;
     }
     
     

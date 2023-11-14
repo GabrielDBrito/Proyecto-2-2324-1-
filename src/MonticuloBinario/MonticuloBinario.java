@@ -7,7 +7,12 @@ import EDD.ListaG;
 import EDD.NodoG;
 import Helpers.Helpers;
 import ManejoArchivo.ManejoArchivo;
+import java.awt.BorderLayout;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
 /**
  *
  * @author luis, gabriel
@@ -167,5 +172,19 @@ public class MonticuloBinario< T extends Comparable<T>>{
         Impresion temp = arreglo[nodo1];
         arreglo[nodo1] = arreglo[nodo2];
         arreglo[nodo2] = temp;
+    }
+    public void mostrarUsuarios(){
+            SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Usuarios");
+            frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            frame.setSize(300, 400);
+
+            JTextArea textArea = new JTextArea();
+            getUsuarios().mostrarNombresUsuarios(textArea);
+            textArea.setEditable(false);
+            JScrollPane scrollPane = new JScrollPane(textArea);
+            frame.add(scrollPane, BorderLayout.CENTER);
+            frame.setVisible(true);
+        });
     }
 }
