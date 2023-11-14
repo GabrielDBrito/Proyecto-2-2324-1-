@@ -4,22 +4,25 @@
  */
 package Interfaces;
 
+import MonticuloBinario.MonticuloBinario;
+
 /**
  *
  * @author cesar
  */
 public class Agregar extends javax.swing.JFrame {
     public static ModificarCola v3;
-
+    static private MonticuloBinario monticulo;
     /**
      * Creates new form Agregar
      */
-    public Agregar(ModificarCola v3) {
+    public Agregar(ModificarCola v3, MonticuloBinario monticulo) {
         initComponents();
         this.v3=v3;
         v3.setVisible(false);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.monticulo=monticulo;
     }
 
     /**
@@ -89,7 +92,7 @@ public class Agregar extends javax.swing.JFrame {
     }//GEN-LAST:event_AgregarActionPerformed
 
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
-        Menu menu = new Menu();
+        Menu menu = new Menu(monticulo);
         this.setVisible(false);
         menu.setVisible(true);
     }//GEN-LAST:event_MenuActionPerformed
@@ -124,7 +127,7 @@ public class Agregar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Agregar(v3).setVisible(true);
+                new Agregar(v3, monticulo).setVisible(true);
             }
         });
     }
