@@ -122,7 +122,7 @@ public class MonticuloBinario< T extends Comparable<T>>{
     //insertar()agrega una nueva impresion al monticulo binario. Se inserta la impresion al final del arreglo
     public void insertar(Impresion impresion, Documento documento) {
         arreglo[cima] = impresion;
-        burbujaArriba(cima - 1);
+        Ajustehaciaarriba(cima - 1);
     }
 
     //eliminarMin()elimina la impresion con el identificador mas pequeño del monticulo binario. 
@@ -133,12 +133,12 @@ public class MonticuloBinario< T extends Comparable<T>>{
         }
         Impresion impresion = arreglo[0];
         arreglo[0] = arreglo[--cima];
-        burbujaAbajo(0);
+        Ajustehaciaabajo(0);
         return impresion;
     }
 
     //burbujaArriba se utiliza para mantener las propiedades del monticulo despues de insertar una nueva inpresion
-    private void burbujaArriba(int nodo) {
+    private void Ajustehaciaarriba(int nodo) {
         while (nodo > 0 && arreglo[nodo].compareTo(arreglo[(nodo - 1) / 2]) < 0) {
             intercambiar(nodo, (nodo - 1) / 2);
             nodo = (nodo - 1) / 2;
@@ -146,7 +146,7 @@ public class MonticuloBinario< T extends Comparable<T>>{
     }
 
     //burbujaAbajo se utiliza para mantener las propiedades del monticulo despues de eliminar la impresion con el identificador mas pequeño
-    private void burbujaAbajo(int nodo) {
+    private void Ajustehaciaabajo(int nodo) {
         while (2 * nodo + 1 < cima) {
             int leftSon = 2 * nodo + 1;
             int rightSon = 2 * nodo + 2;

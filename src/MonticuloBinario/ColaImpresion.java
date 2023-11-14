@@ -24,9 +24,12 @@ public class ColaImpresion<T> {
 }
 
         //monticulo.insertar(impresion);
-    public Impresion eliminar() {
-        return monticulo.eliminarMin();
-    }
+    public String eliminar() {
+        
+        return monticulo.eliminarMin().getDocumento();
+}
+    
+        //return monticulo.eliminarMin();
 
     public boolean estaVacia() {
         return monticulo.cima == 0;

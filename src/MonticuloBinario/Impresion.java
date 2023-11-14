@@ -13,10 +13,12 @@ package MonticuloBinario;
 public class Impresion  implements Comparable<Impresion> {
     private int id;
     private String documento;
-
+    private String prioridad;
+    
     public Impresion(String documento, String prioridad) {
-        this.id = id;
+        this.id = 0;
         this.documento = documento;
+        this.prioridad = prioridad;
     }
 
     public void setId(int id) {
@@ -33,6 +35,10 @@ public class Impresion  implements Comparable<Impresion> {
 
     public String getDocumento() {
         return documento;
+    }
+    // Método para obtener la prioridad
+    public String getPrioridad() {
+        return prioridad;
     }
     @Override
     public String toString(){
