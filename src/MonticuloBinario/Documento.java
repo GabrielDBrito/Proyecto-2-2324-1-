@@ -53,5 +53,5 @@ public class Documento {
         this.encolado = encolado;
     }
     
-    
+   
 }

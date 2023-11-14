@@ -209,16 +209,17 @@ public class ListaG {
         String nombres = "";
 
         while (temp != null) {
-            String documentos = "[ ";
+            String documentos = "";
             NodoD pointer=temp.getUsuario().getDocumentos().getHead();
             while(pointer!=null){
                 if (pointer.getDocumento().isEncolado()){
-                documentos+=pointer.getDocumento().getNombre()+"(en cola), ";
+                documentos+="["+pointer.getDocumento().getNombre()+"(en cola)] ";
                 }else{
-                documentos+=pointer.getDocumento().getNombre()+", ";
+                documentos+="["+pointer.getDocumento().getNombre()+"] ";
                 }
+                pointer=pointer.getNext();
             }
-            documentos+=" ]\n";
+            documentos+="\n";
             nombres+= " Nombre: "+temp.getUsuario().getNombre()+"\n";
             nombres+= " Tipo: "+temp.getUsuario().getTipo()+"\n";
             nombres+= " Documentos: "+documentos;

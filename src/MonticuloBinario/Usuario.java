@@ -6,6 +6,7 @@ package MonticuloBinario;
 
 import EDD.ListaD;
 import EDD.NodoD;
+import Helpers.Helpers;
 import java.lang.reflect.Field;
 import javax.swing.JOptionPane;
 
@@ -74,21 +75,5 @@ public class Usuario {
         getDocumentos().insertFinal(documento);
         JOptionPane.showMessageDialog(null, "Documento creado con exito");
     }   
-    
-    /*public void mostrarAtributos(Object obj) {
-        Field[] fields = obj.getClass().getDeclaredFields();
-
-        StringBuilder sb = new StringBuilder();
-
-        for (Field field : fields) {
-            field.setAccessible(true); // Para asegurar el acceso a atributos privados
-            try {
-                sb.append(field.getName()).append(": ").append(field.get(obj)).append("\n");
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-                }
-            }
-        JOptionPane.showMessageDialog(null, sb.toString());
-
-    }/*/
+   
 }

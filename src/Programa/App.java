@@ -7,6 +7,7 @@ import EDD.NodoG;
 import Interfaces.Menu;
 import ManejoArchivo.ManejoArchivo;
 import MonticuloBinario.MonticuloBinario;
+import MonticuloBinario.Usuario;
 /**
  *
  * @author Gabriel
@@ -21,7 +22,7 @@ public class App {
        MonticuloBinario monticulo=new MonticuloBinario(100);
        Menu ventana = new Menu(monticulo);
        ventana.setVisible(true);
-       
+   
        /*
        para acceder al documento
        NodoG nodo =monticulo.buscarPorNombre("nombre del usuario");

@@ -4,25 +4,27 @@
  */
 package Interfaces;
 
+import static Interfaces.ModificarCola.monticulo;
 import MonticuloBinario.MonticuloBinario;
 
 /**
  *
  * @author cesar
  */
-public class ModificarCola extends javax.swing.JFrame {
-    
-    public static Menu v1;
-    static MonticuloBinario monticulo;
+public class AgregarUsuario extends javax.swing.JFrame {
+    public static Usuarios v4;
+    static private MonticuloBinario monticulo;
 
-    public ModificarCola(Menu v1, MonticuloBinario monticulo) {
+    /**
+     * Creates new form AgregarUsuario
+     */
+    public AgregarUsuario(Usuarios v4, MonticuloBinario monticulo) {
         initComponents();
-        this.v1=v1;
-        v1.setVisible(false);
+        this.v4=v4;
+        this.monticulo=monticulo;
+        v4.setVisible(false);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        this.monticulo=monticulo;
-        
     }
 
     /**
@@ -35,9 +37,11 @@ public class ModificarCola extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        NombreUsuario = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        TipoPrioridad = new javax.swing.JTextField();
         Agregar = new javax.swing.JButton();
-        Eliminar = new javax.swing.JButton();
         Menu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,8 +49,27 @@ public class ModificarCola extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel1.setText("Ingrese el nombre de usuario:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+
+        NombreUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreUsuarioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 440, -1));
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel2.setText("Ingrese el tipo de prioridad: (Formato: prioridad_alta/media/baja)");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+
+        TipoPrioridad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TipoPrioridadActionPerformed(evt);
+            }
+        });
+        jPanel1.add(TipoPrioridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 610, -1));
 
         Agregar.setText("Agregar");
         Agregar.addActionListener(new java.awt.event.ActionListener() {
@@ -54,15 +77,7 @@ public class ModificarCola extends javax.swing.JFrame {
                 AgregarActionPerformed(evt);
             }
         });
-        jPanel2.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 210, 30));
-
-        Eliminar.setText("Eliminar");
-        Eliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EliminarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 210, 30));
+        jPanel1.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 90, -1));
 
         Menu.setText("Menu");
         Menu.addActionListener(new java.awt.event.ActionListener() {
@@ -70,9 +85,7 @@ public class ModificarCola extends javax.swing.JFrame {
                 MenuActionPerformed(evt);
             }
         });
-        jPanel2.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 100, -1));
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 460));
+        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(774, 400, 90, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,20 +101,25 @@ public class ModificarCola extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
-        Agregar v4 = new Agregar(this, monticulo);
-    }//GEN-LAST:event_AgregarActionPerformed
-
-    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
-        Eliminar v5 = new Eliminar(this, monticulo);
+    private void NombreUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreUsuarioActionPerformed
         
-    }//GEN-LAST:event_EliminarActionPerformed
+    }//GEN-LAST:event_NombreUsuarioActionPerformed
+
+    private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
+        String nombre_usuario = NombreUsuario.getText(); 
+        String tipo_prioridad = TipoPrioridad.getText();
+        monticulo.agregarUsuario(nombre_usuario, tipo_prioridad);
+    }//GEN-LAST:event_AgregarActionPerformed
 
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
         Menu menu = new Menu(monticulo);
         this.setVisible(false);
         menu.setVisible(true);
     }//GEN-LAST:event_MenuActionPerformed
+
+    private void TipoPrioridadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TipoPrioridadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TipoPrioridadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,29 +138,31 @@ public class ModificarCola extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ModificarCola.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ModificarCola.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ModificarCola.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ModificarCola.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ModificarCola(v1, monticulo).setVisible(true);
+                new AgregarUsuario(v4,monticulo).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Agregar;
-    private javax.swing.JButton Eliminar;
     private javax.swing.JButton Menu;
+    private javax.swing.JTextField NombreUsuario;
+    private javax.swing.JTextField TipoPrioridad;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
