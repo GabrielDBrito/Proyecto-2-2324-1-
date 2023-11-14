@@ -4,19 +4,22 @@
  */
 package Interfaces;
 
+import MonticuloBinario.MonticuloBinario;
+
 /**
  *
  * @author cesar
  */
 public class EliminarUsuarios extends javax.swing.JFrame {
     public static Usuarios v4;
-
+    static private MonticuloBinario monticulo;
     /**
      * Creates new form EliminarUsuarios
      */
-    public EliminarUsuarios(Usuarios v4) {
+    public EliminarUsuarios(Usuarios v4,MonticuloBinario monticulo) {
         initComponents();
         this.v4=v4;
+        this.monticulo=monticulo;
         v4.setVisible(false);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
@@ -84,10 +87,13 @@ public class EliminarUsuarios extends javax.swing.JFrame {
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
         String nombre_usuario = NombreUsuario.getText();
+        monticulo.eliminarUsuario(nombre_usuario);
     }//GEN-LAST:event_EliminarActionPerformed
 
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
-
+        Menu menu = new Menu(monticulo);
+        this.setVisible(false);
+        menu.setVisible(true);
     }//GEN-LAST:event_MenuActionPerformed
 
     /**
@@ -120,7 +126,7 @@ public class EliminarUsuarios extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EliminarUsuarios(v4).setVisible(true);
+                new EliminarUsuarios(v4, monticulo).setVisible(true);
             }
         });
     }

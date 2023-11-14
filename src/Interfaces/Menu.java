@@ -5,6 +5,12 @@
 package Interfaces;
 
 import MonticuloBinario.MonticuloBinario;
+import java.awt.BorderLayout;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -19,6 +25,7 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
         this.monticulo=monticulo;
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -120,6 +127,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void EXITActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITActionPerformed
         this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_EXITActionPerformed
 
     private void ModificarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarColaActionPerformed
@@ -128,19 +136,44 @@ public class Menu extends javax.swing.JFrame {
 
 
     private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
-        Usuarios v5 = new Usuarios(this);
+        Usuarios v5 = new Usuarios(this,monticulo);
     }//GEN-LAST:event_UsuariosActionPerformed
 
     private void CargarArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarArchivoActionPerformed
+        try{
         monticulo.crearUsuariosArchivo();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Carga del archivo fallida");
+        }
     }//GEN-LAST:event_CargarArchivoActionPerformed
 
     private void ArchivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ArchivosActionPerformed
-       Archivos v6 = new Archivos(this);
+        if (monticulo.getUsuarios().getHead()==null){
+            JOptionPane.showMessageDialog(null, "No hay usuarios registrados");
+        }else{
+            Archivos v6 = new Archivos(this,monticulo);
+        }
     }//GEN-LAST:event_ArchivosActionPerformed
 
     private void MostrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarUsuariosActionPerformed
-        MostrarUsuarios v7 = new MostrarUsuarios(this);
+         if (monticulo.getUsuarios().getHead()==null){
+            JOptionPane.showMessageDialog(null, "No hay usuarios registrados");
+        }else{
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Usuarios");
+            frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            frame.setSize(300, 400);
+
+            JTextArea textArea = new JTextArea();
+            monticulo.getUsuarios().mostrarNombresUsuarios(textArea);
+            textArea.setEditable(false);
+            JScrollPane scrollPane = new JScrollPane(textArea);
+            frame.add(scrollPane, BorderLayout.CENTER);
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+        //MostrarUsuarios v7 = new MostrarUsuarios(this);
+        });
+         }
     }//GEN-LAST:event_MostrarUsuariosActionPerformed
 
     private void MostrarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarColaActionPerformed

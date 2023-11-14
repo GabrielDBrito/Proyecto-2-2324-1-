@@ -7,12 +7,9 @@ import EDD.ListaG;
 import EDD.NodoG;
 import Helpers.Helpers;
 import ManejoArchivo.ManejoArchivo;
-import java.awt.BorderLayout;
-import javax.swing.JFrame;
+import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.SwingUtilities;
+
 /**
  *
  * @author luis, gabriel
@@ -68,6 +65,7 @@ public class MonticuloBinario< T extends Comparable<T>>{
     Este metodo le permite al usuario seleccionar un archivo CSV, para crear los usuarios automaticamente
     */
     public void crearUsuariosArchivo(){
+        try{
         ManejoArchivo manejo =new ManejoArchivo();
         ListaG lista=manejo.lecturaArchivo();
         NodoG pointer=lista.getHead();
@@ -76,6 +74,9 @@ public class MonticuloBinario< T extends Comparable<T>>{
             pointer=pointer.getNext();
         }
         JOptionPane.showMessageDialog(null, "Usuarios agregados con exito");
+        }catch(HeadlessException e){
+            JOptionPane.showMessageDialog(null, "Error cargando el archivo");
+        }
     
     }
     
@@ -104,7 +105,7 @@ public class MonticuloBinario< T extends Comparable<T>>{
         boolean verificacion2=helpers.verificarTipo(tipo);
         if (verificacion1 && verificacion2){
             crearUsuario(nombre,tipo);
-            JOptionPane.showMessageDialog(null, "Usuarios agregado exitosamente");
+            JOptionPane.showMessageDialog(null, "Usuario agregado exitosamente");
         }
     }
     /*
@@ -114,14 +115,13 @@ public class MonticuloBinario< T extends Comparable<T>>{
     public void eliminarUsuario(String nombre){
         NodoG nodo=buscarPorNombre(nombre);
         if (nodo==null){
-            JOptionPane.showMessageDialog(null, "El usuario que se quiere borrar no ha sido encontrado");
+            JOptionPane.showMessageDialog(null, "El usuario no ha sido encontrado");
         }
         else{
             getUsuarios().borrarPorNombre(nombre);
-            JOptionPane.showMessageDialog(null, "Usuarios borrado exitosamente");
+            JOptionPane.showMessageDialog(null, "Usuario borrado exitosamente");
             //no se si falta algo referente a los documentos, creo q si
-        }
-        
+        } 
     }
 
     //insertar()agrega una nueva impresion al monticulo binario. Se inserta la impresion al final del arreglo
@@ -173,19 +173,7 @@ public class MonticuloBinario< T extends Comparable<T>>{
         arreglo[nodo1] = arreglo[nodo2];
         arreglo[nodo2] = temp;
     }
+
     
-    public static void mostrar() {
-        SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Usuarios");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(300, 400);
-
-            JTextArea textArea = new JTextArea();
-            textArea.setEditable(false);
-            JScrollPane scrollPane = new JScrollPane(textArea);
-            frame.add(scrollPane, BorderLayout.CENTER);
-
-            frame.setVisible(true);
-        });
-    }
 }
+                    

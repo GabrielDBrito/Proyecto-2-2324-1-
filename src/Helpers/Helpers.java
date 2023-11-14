@@ -4,9 +4,12 @@
  */
 package Helpers;
 import EDD.Lista;
+import EDD.ListaD;
+import EDD.NodoD;
 import javax.swing.JOptionPane;
 import EDD.NodoG;
 import MonticuloBinario.MonticuloBinario;
+import MonticuloBinario.Usuario;
 
 /**
  *
@@ -32,12 +35,12 @@ public class Helpers {
                 return numero;
 
             } else {
-                JOptionPane.showMessageDialog(null, "Numnero invalido1. ");
+
                 return null;
             }
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Numnero invalido1. ");
+ 
         }
 
         return null;
@@ -76,6 +79,22 @@ public class Helpers {
             return true;
         }else{
             JOptionPane.showMessageDialog(null, "Incumplimiento del formato del tipo. Este debe ser \n prioridad_alta, prioridad_media o prioridad_baja");
+            return false;
+        }
+    }
+    public boolean verificarNombreDocumento(String nombre, Usuario usuario){
+        ListaD lista=usuario.getDocumentos();
+        NodoD pointer=lista.getHead();
+        int cont=0;
+        while(pointer!=null){
+            if (pointer.getDocumento().getNombre().equalsIgnoreCase(nombre)){
+                cont=1;
+            }
+        pointer=pointer.getNext();
+        }
+        if (cont==0){
+            return true;
+        }else{
             return false;
         }
     }

@@ -4,19 +4,24 @@
  */
 package Interfaces;
 
+import static Interfaces.ModificarCola.monticulo;
+import MonticuloBinario.MonticuloBinario;
+
 /**
  *
  * @author cesar
  */
 public class AgregarUsuario extends javax.swing.JFrame {
     public static Usuarios v4;
+    static private MonticuloBinario monticulo;
 
     /**
      * Creates new form AgregarUsuario
      */
-    public AgregarUsuario(Usuarios v4) {
+    public AgregarUsuario(Usuarios v4, MonticuloBinario monticulo) {
         initComponents();
         this.v4=v4;
+        this.monticulo=monticulo;
         v4.setVisible(false);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
@@ -58,6 +63,12 @@ public class AgregarUsuario extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel2.setText("Ingrese el tipo de prioridad: (Formato: prioridad_alta/media/baja)");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+
+        TipoPrioridad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TipoPrioridadActionPerformed(evt);
+            }
+        });
         jPanel1.add(TipoPrioridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 610, -1));
 
         Agregar.setText("Agregar");
@@ -97,11 +108,18 @@ public class AgregarUsuario extends javax.swing.JFrame {
     private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
         String nombre_usuario = NombreUsuario.getText(); 
         String tipo_prioridad = TipoPrioridad.getText();
+        monticulo.agregarUsuario(nombre_usuario, tipo_prioridad);
     }//GEN-LAST:event_AgregarActionPerformed
 
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
-        
+        Menu menu = new Menu(monticulo);
+        this.setVisible(false);
+        menu.setVisible(true);
     }//GEN-LAST:event_MenuActionPerformed
+
+    private void TipoPrioridadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TipoPrioridadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TipoPrioridadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,7 +151,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AgregarUsuario(v4).setVisible(true);
+                new AgregarUsuario(v4,monticulo).setVisible(true);
             }
         });
     }

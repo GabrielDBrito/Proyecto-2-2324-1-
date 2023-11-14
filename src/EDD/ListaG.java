@@ -5,6 +5,7 @@
 package EDD;
 
 import MonticuloBinario.Usuario;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -201,5 +202,31 @@ public class ListaG {
                 return null;
             }
         }     
+    }
+    
+    public void mostrarNombresUsuarios(JTextArea textArea) {
+        NodoG temp = this.head;
+        String nombres = "";
+
+        while (temp != null) {
+            String documentos = "";
+            NodoD pointer=temp.getUsuario().getDocumentos().getHead();
+            while(pointer!=null){
+                if (pointer.getDocumento().isEncolado()){
+                documentos+="["+pointer.getDocumento().getNombre()+"(en cola)] ";
+                }else{
+                documentos+="["+pointer.getDocumento().getNombre()+"] ";
+                }
+                pointer=pointer.getNext();
+            }
+            documentos+="\n";
+            nombres+= " Nombre: "+temp.getUsuario().getNombre()+"\n";
+            nombres+= " Tipo: "+temp.getUsuario().getTipo()+"\n";
+            nombres+= " Documentos: "+documentos;
+            nombres+="------------------------------------------------------------------------\n";
+            temp = temp.getNext();
+        }
+
+        textArea.setText(nombres);
     }
 }

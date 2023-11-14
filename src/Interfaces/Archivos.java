@@ -4,19 +4,26 @@
  */
 package Interfaces;
 
+import EDD.NodoG;
+import Helpers.Helpers;
+import MonticuloBinario.MonticuloBinario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author cesar
  */
 public class Archivos extends javax.swing.JFrame {
     public static Menu v1;
+    static private MonticuloBinario monticulo;
 
     /**
      * Creates new form Archivos
      */
-    public Archivos(Menu v1) {
+    public Archivos(Menu v1,MonticuloBinario monticulo) {
         initComponents();
         this.v1=v1;
+        this.monticulo=monticulo;
         v1.setVisible(false);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
@@ -76,6 +83,11 @@ public class Archivos extends javax.swing.JFrame {
         jPanel1.add(CrearDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 410, -1, -1));
 
         Menu.setText("Menu");
+        Menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuActionPerformed(evt);
+            }
+        });
         jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 510, 80, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -100,7 +112,36 @@ public class Archivos extends javax.swing.JFrame {
         String nombre_usuario = NombreUsuario.getText();
         String nombre_documento = NombreDocumento.getText();
         String tamano_documento = TamanoDocumento.getText();
+        Helpers helpers =new Helpers();
+        Integer dimension2=helpers.valorNumero(tamano_documento);
+        if(dimension2==null){
+            JOptionPane.showMessageDialog(null, "Tamaño invalido\nColoque un numero entero");
+        }
+        NodoG nodo=monticulo.buscarPorNombre(nombre_usuario);
+            if(nodo==null){
+            JOptionPane.showMessageDialog(null, "Usuario no encontrado");
+        }
+        boolean nombreD=false;
+        if (nodo!=null ){
+            nombreD=helpers.verificarNombreDocumento(nombre_documento, nodo.getUsuario());
+            if(nombreD==false){
+            JOptionPane.showMessageDialog(null, "Nombre del documento invalido\n(nombre repetido)");
+            }
+        }
+        if(dimension2!=null && nodo!=null && nombreD==true){
+            nodo.getUsuario().crearDocumento(nombre_documento, dimension2);
+            
+        }
+        
+        
+        
     }//GEN-LAST:event_CrearDocumentoActionPerformed
+
+    private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
+        Menu menu = new Menu(monticulo);
+        this.setVisible(false);
+        menu.setVisible(true);
+    }//GEN-LAST:event_MenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,7 +173,7 @@ public class Archivos extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Archivos(v1).setVisible(true);
+                new Archivos(v1, monticulo).setVisible(true);
             }
         });
     }

@@ -64,11 +64,11 @@ public class ManejoArchivo {
                 return usuarios;
                 
         } else{
-            JOptionPane.showMessageDialog(null, "Error en la lectura del archivo");
+            
             }
             return null;
         }catch(HeadlessException | IOException e){
-            JOptionPane.showMessageDialog(null, "Error en la lectura del archivo");
+            
             return null;
         }
     }

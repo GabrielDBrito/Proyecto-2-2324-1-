@@ -4,6 +4,9 @@
  */
 package Interfaces;
 
+import MonticuloBinario.MonticuloBinario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author cesar
@@ -11,13 +14,15 @@ package Interfaces;
 public class Usuarios extends javax.swing.JFrame {
     
     public static Menu v1;
+    static private MonticuloBinario monticulo;
 
     /**
      * Creates new form Usuarios
      */
-    public Usuarios(Menu v1) {
+    public Usuarios(Menu v1,MonticuloBinario monticulo) {
         initComponents();
         this.v1=v1;
+        this.monticulo=monticulo;
         v1.setVisible(false);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
@@ -59,6 +64,11 @@ public class Usuarios extends javax.swing.JFrame {
         jPanel1.add(EliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 270, -1));
 
         Menu.setText("Menu");
+        Menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuActionPerformed(evt);
+            }
+        });
         jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 390, 90, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -76,12 +86,22 @@ public class Usuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarUsuarioActionPerformed
-        AgregarUsuario v4 = new AgregarUsuario(this);
+        AgregarUsuario v4 = new AgregarUsuario(this,monticulo);
     }//GEN-LAST:event_AgregarUsuarioActionPerformed
 
     private void EliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarUsuarioActionPerformed
-        EliminarUsuarios v4 = new EliminarUsuarios(this);
+        if (monticulo.getUsuarios().getHead()==null){
+            JOptionPane.showMessageDialog(null, "No hay usuarios");
+        }else{
+        EliminarUsuarios v4 = new EliminarUsuarios(this, monticulo);
+        }
     }//GEN-LAST:event_EliminarUsuarioActionPerformed
+
+    private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
+        Menu menu = new Menu(monticulo);
+        this.setVisible(false);
+        menu.setVisible(true);
+    }//GEN-LAST:event_MenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,7 +133,7 @@ public class Usuarios extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Usuarios(v1).setVisible(true);
+                new Usuarios(v1, monticulo).setVisible(true);
             }
         });
     }
