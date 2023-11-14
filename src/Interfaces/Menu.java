@@ -96,6 +96,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void CargarArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarArchivoActionPerformed
         monticulo.crearUsuariosArchivo();
+        monticulo.getUsuarios().print();
     }//GEN-LAST:event_CargarArchivoActionPerformed
 
     /**
