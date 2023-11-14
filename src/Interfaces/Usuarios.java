@@ -4,25 +4,23 @@
  */
 package Interfaces;
 
-import MonticuloBinario.MonticuloBinario;
-
 /**
  *
  * @author cesar
  */
-public class ModificarCola extends javax.swing.JFrame {
+public class Usuarios extends javax.swing.JFrame {
     
     public static Menu v1;
-    static MonticuloBinario monticulo;
 
-    public ModificarCola(Menu v1, MonticuloBinario monticulo) {
+    /**
+     * Creates new form Usuarios
+     */
+    public Usuarios(Menu v1) {
         initComponents();
         this.v1=v1;
         v1.setVisible(false);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        this.monticulo=monticulo;
-        
     }
 
     /**
@@ -35,9 +33,8 @@ public class ModificarCola extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        Agregar = new javax.swing.JButton();
-        Eliminar = new javax.swing.JButton();
+        AgregarUsuario = new javax.swing.JButton();
+        EliminarUsuario = new javax.swing.JButton();
         Menu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,34 +42,24 @@ public class ModificarCola extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Agregar.setText("Agregar");
-        Agregar.addActionListener(new java.awt.event.ActionListener() {
+        AgregarUsuario.setText("Agregar Usuario");
+        AgregarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarActionPerformed(evt);
+                AgregarUsuarioActionPerformed(evt);
             }
         });
-        jPanel2.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 210, 30));
+        jPanel1.add(AgregarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 270, -1));
 
-        Eliminar.setText("Eliminar");
-        Eliminar.addActionListener(new java.awt.event.ActionListener() {
+        EliminarUsuario.setText("Eliminar Usuario");
+        EliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EliminarActionPerformed(evt);
+                EliminarUsuarioActionPerformed(evt);
             }
         });
-        jPanel2.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 210, 30));
+        jPanel1.add(EliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 270, -1));
 
         Menu.setText("Menu");
-        Menu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuActionPerformed(evt);
-            }
-        });
-        jPanel2.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 100, -1));
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 460));
+        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 390, 90, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,20 +75,13 @@ public class ModificarCola extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
-        Agregar v4 = new Agregar(this, monticulo);
-    }//GEN-LAST:event_AgregarActionPerformed
+    private void AgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarUsuarioActionPerformed
+        AgregarUsuario v4 = new AgregarUsuario(this);
+    }//GEN-LAST:event_AgregarUsuarioActionPerformed
 
-    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
-        Eliminar v5 = new Eliminar(this, monticulo);
-        
-    }//GEN-LAST:event_EliminarActionPerformed
-
-    private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
-        Menu menu = new Menu(monticulo);
-        this.setVisible(false);
-        menu.setVisible(true);
-    }//GEN-LAST:event_MenuActionPerformed
+    private void EliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarUsuarioActionPerformed
+        EliminarUsuarios v4 = new EliminarUsuarios(this);
+    }//GEN-LAST:event_EliminarUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,29 +100,28 @@ public class ModificarCola extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ModificarCola.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ModificarCola.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ModificarCola.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ModificarCola.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ModificarCola(v1, monticulo).setVisible(true);
+                new Usuarios(v1).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Agregar;
-    private javax.swing.JButton Eliminar;
+    private javax.swing.JButton AgregarUsuario;
+    private javax.swing.JButton EliminarUsuario;
     private javax.swing.JButton Menu;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
