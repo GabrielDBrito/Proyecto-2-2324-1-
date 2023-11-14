@@ -91,7 +91,7 @@ public class Usuarios extends javax.swing.JFrame {
 
     private void EliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarUsuarioActionPerformed
         if (monticulo.getUsuarios().getHead()==null){
-            JOptionPane.showMessageDialog(null, "No hay usuarios");
+            JOptionPane.showMessageDialog(null, "No hay usuarios registrados");
         }else{
         EliminarUsuarios v4 = new EliminarUsuarios(this, monticulo);
         }

@@ -203,7 +203,10 @@ public class ListaG {
             }
         }     
     }
-    
+    /*
+    Este metodo muestra por pantalla todos los usuarios junto a sus atributos
+    @param textArea
+    */
     public void mostrarNombresUsuarios(JTextArea textArea) {
         NodoG temp = this.head;
         String nombres = "";

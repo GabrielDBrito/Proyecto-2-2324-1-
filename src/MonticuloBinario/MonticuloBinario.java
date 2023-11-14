@@ -126,6 +126,7 @@ public class MonticuloBinario< T extends Comparable<T>>{
 
     //insertar()agrega una nueva impresion al monticulo binario. Se inserta la impresion al final del arreglo
     public void insertar(Impresion impresion, Documento documento) {
+        documento.setEncolado(true);
         arreglo[cima] = impresion;
         Ajustehaciaarriba(cima - 1);
     }

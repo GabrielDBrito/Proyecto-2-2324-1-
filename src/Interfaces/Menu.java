@@ -95,7 +95,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(Usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 180, -1));
 
-        Archivos.setText("Archivos");
+        Archivos.setText("Crear Documento");
         Archivos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ArchivosActionPerformed(evt);
@@ -154,9 +154,12 @@ public class Menu extends javax.swing.JFrame {
             Archivos v6 = new Archivos(this,monticulo);
         }
     }//GEN-LAST:event_ArchivosActionPerformed
-
+    /*
+    Muestra por pantalla a todos los usuarios junto a sus atributos 
+    */
     private void MostrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarUsuariosActionPerformed
-         if (monticulo.getUsuarios().getHead()==null){
+        
+        if (monticulo.getUsuarios().getHead()==null){
             JOptionPane.showMessageDialog(null, "No hay usuarios registrados");
         }else{
         SwingUtilities.invokeLater(() -> {

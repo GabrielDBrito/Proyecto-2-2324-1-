@@ -114,6 +114,7 @@ public class Archivos extends javax.swing.JFrame {
         String tamano_documento = TamanoDocumento.getText();
         Helpers helpers =new Helpers();
         Integer dimension2=helpers.valorNumero(tamano_documento);
+        //verificaciones
         if(dimension2==null){
             JOptionPane.showMessageDialog(null, "Tamaño invalido\nColoque un numero entero");
         }
