@@ -18,13 +18,13 @@ public class ColaImpresion<T> {
     //Este metodo crea una nueva impresión con los datos del documento y el id incrementado en 1. 
     //Luego, el método pasa la nueva impresión al método insertar() de la clase MonticuloBinario para mantener el orden de las impresiones en la cola por su id.
     public void insertar(Documento documento) {
-        Impresion nuevaImpresion = new Impresion(documento.getNombre(), documento.getPrioridad());
+        Impresion nuevaImpresion = new Impresion(documento, documento.getPrioridad());
         nuevaImpresion.setId(nuevaImpresion.getId() + 1);
         monticulo.insertar(nuevaImpresion, documento);
 }
 
         //monticulo.insertar(impresion);
-    public String eliminar() {
+    public Documento eliminar() {
         
         return monticulo.eliminarMin().getDocumento();
 }
