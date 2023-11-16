@@ -10,14 +10,15 @@ import MonticuloBinario.MonticuloBinario;
  *
  * @author cesar
  */
-public class EliminarDocumentos extends javax.swing.JFrame {
+public class MostrarDocumentos extends javax.swing.JFrame {
     public static Menu v1;
     static private MonticuloBinario monticulo;
+    
 
     /**
-     * Creates new form EliminarDocumentos
+     * Creates new form MostrarDocumentos
      */
-    public EliminarDocumentos(Menu v1, MonticuloBinario monticulo) {
+    public MostrarDocumentos(Menu v1,MonticuloBinario monticulo) {
         initComponents();
         this.v1=v1;
         v1.setVisible(false);
@@ -38,54 +39,42 @@ public class EliminarDocumentos extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         NombreUsuario = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        NombreDocumento = new javax.swing.JTextField();
-        Eliminar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Mostrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel1.setText("Ingrese el nombre de usuario del propietario del documento:");
+        jLabel1.setText("Ingrese el nombre de usuario para ver sus documentos:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
-        jPanel1.add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 530, -1));
+        jPanel1.add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 500, -1));
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel2.setText("Ingrese el nombre del documento a eliminar:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
-        jPanel1.add(NombreDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 550, -1));
-
-        Eliminar.setText("EliminarDocumento");
-        Eliminar.addActionListener(new java.awt.event.ActionListener() {
+        Mostrar.setText("Mostrar");
+        Mostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EliminarActionPerformed(evt);
+                MostrarActionPerformed(evt);
             }
         });
-        jPanel1.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 150, -1));
-
-        jButton2.setText("Menu");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(867, 410, 70, -1));
+        jPanel1.add(Mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, 110, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 907, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
+    private void MostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarActionPerformed
         String nombre_usuario = NombreUsuario.getText();
-        String nombre_documento = NombreDocumento.getText();
-    }//GEN-LAST:event_EliminarActionPerformed
+    }//GEN-LAST:event_MostrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -104,31 +93,28 @@ public class EliminarDocumentos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EliminarDocumentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MostrarDocumentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EliminarDocumentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MostrarDocumentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EliminarDocumentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MostrarDocumentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EliminarDocumentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MostrarDocumentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EliminarDocumentos(v1,monticulo).setVisible(true);
+                new MostrarDocumentos(v1,monticulo).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Eliminar;
-    private javax.swing.JTextField NombreDocumento;
+    private javax.swing.JButton Mostrar;
     private javax.swing.JTextField NombreUsuario;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
