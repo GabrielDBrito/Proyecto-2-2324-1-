@@ -127,6 +127,11 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 180, -1));
 
         MostrarDocumentos.setText("Mostrar Documentos");
+        MostrarDocumentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MostrarDocumentosActionPerformed(evt);
+            }
+        });
         jPanel1.add(MostrarDocumentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, 180, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -222,6 +227,10 @@ public class Menu extends javax.swing.JFrame {
             EliminarDocumentos v8 = new EliminarDocumentos(this,monticulo);
         }
     }//GEN-LAST:event_EliminarDocumentosActionPerformed
+
+    private void MostrarDocumentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarDocumentosActionPerformed
+        MostrarDocumentos v10 = new MostrarDocumentos(this,monticulo);
+    }//GEN-LAST:event_MostrarDocumentosActionPerformed
 
     /**
      * @param args the command line arguments

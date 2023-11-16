@@ -4,31 +4,26 @@
  */
 package Interfaces;
 
-import EDD.NodoG;
 import MonticuloBinario.MonticuloBinario;
-import javax.swing.JOptionPane;
-import Helpers.Helpers;
 
 /**
  *
  * @author cesar
  */
 public class EliminarDocumentos extends javax.swing.JFrame {
-    
     public static Menu v1;
     static private MonticuloBinario monticulo;
 
     /**
-     * Creates new form ModificarDocumentos
+     * Creates new form EliminarDocumentos
      */
-    public EliminarDocumentos(Menu v1,MonticuloBinario monticulo1) {
+    public EliminarDocumentos(Menu v1, MonticuloBinario monticulo) {
         initComponents();
         this.v1=v1;
-        this.monticulo=monticulo1;
         v1.setVisible(false);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        
+        this.monticulo=monticulo;
     }
 
     /**
@@ -41,146 +36,57 @@ public class EliminarDocumentos extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        Menu = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        NombreUsuario = new javax.swing.JTextField();
-        EliminarDocumento = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        NombreUsuario = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         NombreDocumento = new javax.swing.JTextField();
+        Eliminar = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 6, -1, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 960, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, -1, -1));
-<<<<<<< HEAD
-=======
-
-        NombreUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NombreUsuarioActionPerformed(evt);
-            }
-        });
-        getContentPane().add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 86, 450, 30));
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel1.setText("Ingrese el nombre de usuario del propietario del documento:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
+        jPanel1.add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 530, -1));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel2.setText("Ingrese el nombre del documento a eliminar:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
+        jPanel1.add(NombreDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 550, -1));
 
-        NombreDocumento.addActionListener(new java.awt.event.ActionListener() {
+        Eliminar.setText("EliminarDocumento");
+        Eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NombreDocumentoActionPerformed(evt);
+                EliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(NombreDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 450, -1));
+        jPanel1.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 150, -1));
 
-        EliminarDocumento.setText("Eliminar Documento");
-        EliminarDocumento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EliminarDocumentoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(EliminarDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 300, 150, -1));
->>>>>>> 537b6162e0fed8f60646f26f41a77e959e16cbbc
+        jButton2.setText("Menu");
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(867, 410, 70, -1));
 
-        Menu.setText("Menu");
-        Menu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(832, 450, 70, -1));
-
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel3.setText("Ingrese el nombre de usuario dueño del documento:");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
-
-        NombreUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NombreUsuarioActionPerformed(evt);
-            }
-        });
-        jPanel3.add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 590, -1));
-
-        EliminarDocumento.setText("Eliminar Documento");
-        EliminarDocumento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EliminarDocumentoActionPerformed(evt);
-            }
-        });
-        jPanel3.add(EliminarDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 310, 150, -1));
-
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel1.setText("Ingrese el nombre del documento a eliminar");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
-        jPanel3.add(NombreDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 590, -1));
-
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 550));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
-=======
-    private void EliminarDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarDocumentoActionPerformed
+    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
         String nombre_usuario = NombreUsuario.getText();
         String nombre_documento = NombreDocumento.getText();
-        NodoG nodo =monticulo.buscarPorNombre(nombre_usuario);
-        
-        if(nodo==null){
-            JOptionPane.showMessageDialog(null, "Usuario no encontrado");
-        }
-        if (nodo!=null ){
-            nodo.getUsuario().eliminarDocumento(nombre_documento);
-            }
-       
-       
-    }//GEN-LAST:event_EliminarDocumentoActionPerformed
+    }//GEN-LAST:event_EliminarActionPerformed
 
->>>>>>> 537b6162e0fed8f60646f26f41a77e959e16cbbc
-    private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
-        Menu menu = new Menu(monticulo);
-        this.setVisible(false);
-        menu.setVisible(true);
-    }//GEN-LAST:event_MenuActionPerformed
-
-<<<<<<< HEAD
-    private void EliminarDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarDocumentoActionPerformed
-        String nombre_usuario = NombreUsuario.getText();
-        System.out.println(nombre_usuario);
-        String nombre_documento = NombreDocumento.getText();
-    }//GEN-LAST:event_EliminarDocumentoActionPerformed
-
-=======
->>>>>>> 537b6162e0fed8f60646f26f41a77e959e16cbbc
-    private void NombreUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NombreUsuarioActionPerformed
-
-<<<<<<< HEAD
-=======
-    private void NombreDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreDocumentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NombreDocumentoActionPerformed
-
->>>>>>> 537b6162e0fed8f60646f26f41a77e959e16cbbc
     /**
      * @param args the command line arguments
      */
@@ -207,7 +113,6 @@ public class EliminarDocumentos extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(EliminarDocumentos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -218,14 +123,12 @@ public class EliminarDocumentos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton EliminarDocumento;
-    private javax.swing.JButton Menu;
+    private javax.swing.JButton Eliminar;
     private javax.swing.JTextField NombreDocumento;
     private javax.swing.JTextField NombreUsuario;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
