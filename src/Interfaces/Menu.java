@@ -49,6 +49,7 @@ public class Menu extends javax.swing.JFrame {
         MostrarUsuarios = new javax.swing.JButton();
         EliminarDocumentos = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        MostrarDocumentos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -123,7 +124,10 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(EliminarDocumentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 180, -1));
 
         jButton1.setText("Liberar Impresora");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, 180, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 180, -1));
+
+        MostrarDocumentos.setText("Mostrar Documentos");
+        jPanel1.add(MostrarDocumentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, 180, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -257,6 +261,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton EliminarDocumentos;
     private javax.swing.JButton ModificarCola;
     private javax.swing.JButton MostrarCola;
+    private javax.swing.JButton MostrarDocumentos;
     private javax.swing.JButton MostrarUsuarios;
     private javax.swing.JButton Usuarios;
     private javax.swing.JButton jButton1;
