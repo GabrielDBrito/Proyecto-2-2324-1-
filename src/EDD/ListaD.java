@@ -5,6 +5,7 @@
 package EDD;
 
 import MonticuloBinario.Documento;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -178,15 +179,16 @@ public class ListaD {
     *@param id
     *@return
     */
-   /* public NodoG deleteById(String id){
+   public NodoD borrarPorNombre(String nombre){
         if (isEmpty()){
+            JOptionPane.showMessageDialog(null, "La lista esta vacia");
             return null;     
         }else{
-            NodoG pointer=getHead();
+            NodoD pointer=getHead();
             int cont=0;
-            NodoG temp=null;
+            NodoD temp=null;
             while(pointer!=null){
-                if (pointer.getUsuario().getId().equalsIgnoreCase(id)){
+                if (pointer.getDocumento().getNombre().equalsIgnoreCase(nombre)){
                     temp=pointer;
                     break;
                 }
@@ -195,10 +197,13 @@ public class ListaD {
             }
             if(temp!= null){
                 deleteAtIndex(cont);
+                JOptionPane.showMessageDialog(null, "El documento eliminado exitosamente");
                 return temp;
             } else{
+                JOptionPane.showMessageDialog(null, "El documento ha borrar no ha sido encontrado");
                 return null;
+                
             }
         }     
-    }/*/
+    }
 }
