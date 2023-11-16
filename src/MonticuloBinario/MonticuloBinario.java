@@ -23,12 +23,14 @@ public class MonticuloBinario< T extends Comparable<T>>{
     private ListaArray arreglo;
     public int cima;
     private ListaG usuarios;
+    private Reloj reloj;
     
     public MonticuloBinario(int tamaño) {
         //arreglo = new Impresion[tamaño];
         arreglo= new ListaArray(100);
         cima = 0;
         this.usuarios=new ListaG();
+        this.reloj=new Reloj();
     }
 
     public ListaArray getArreglo() {
@@ -144,10 +146,24 @@ public class MonticuloBinario< T extends Comparable<T>>{
     }/*/
     
      //insertar()agrega una nueva impresion al monticulo binario. Se inserta la impresion al final del arreglo
-    public void insertar(Documento documento,int numero) {
-        documento.setEncolado(true);
-        Impresion impresion = new Impresion(documento,documento.getPrioridad(),numero);
-        arreglo.add(impresion);
+    public void insertar(Documento documento) {
+        if (documento.getPrioridad().equalsIgnoreCase("prioridad_alta")){
+            int numero=reloj.getValor()-90000;
+            Impresion impresion = new Impresion(documento,documento.getPrioridad(),numero);
+            arreglo.add(impresion);
+        }
+        if (documento.getPrioridad().equalsIgnoreCase("prioridad_media")){
+            int numero=reloj.getValor()-45000;
+            Impresion impresion = new Impresion(documento,documento.getPrioridad(),numero);
+            arreglo.add(impresion);
+        }
+        if (documento.getPrioridad().equalsIgnoreCase("prioridad_baja")){
+            int numero=reloj.getValor();
+            Impresion impresion = new Impresion(documento,documento.getPrioridad(),numero);
+            arreglo.add(impresion);
+        }
+
+        documento.setEncolado(true);  
     }
     
     public void imprimirTodos() {

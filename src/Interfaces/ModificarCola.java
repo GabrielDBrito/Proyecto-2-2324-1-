@@ -18,10 +18,11 @@ public class ModificarCola extends javax.swing.JFrame {
     public ModificarCola(Menu v1, MonticuloBinario monticulo) {
         initComponents();
         this.v1=v1;
+        this.monticulo=monticulo;
         v1.setVisible(false);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        this.monticulo=monticulo;
+        
         
     }
 
