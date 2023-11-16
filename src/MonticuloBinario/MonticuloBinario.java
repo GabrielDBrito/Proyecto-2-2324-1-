@@ -130,14 +130,6 @@ public class MonticuloBinario< T extends Comparable<T>>{
         } 
     }
 
-    //insertar()agrega una nueva impresion al monticulo binario. Se inserta la impresion al final del arreglo
-   /* public void insertar(Documento documento) {
-        documento.setEncolado(true);
-        Impresion impresion = new Impresion(documento,documento.getPrioridad());
-        arreglo[cima] = impresion;
-        Ajustehaciaarriba(cima - 1);
-    }/*/
-
     //eliminarMin()elimina la impresion con el identificador mas pequeño del monticulo binario. 
     //Se intercambia la impresion de la cima del monticulo con la impresion del ultimo elemento del arreglo
     /*public Impresion eliminarMin() {
@@ -161,52 +153,7 @@ public class MonticuloBinario< T extends Comparable<T>>{
     public void imprimirTodos() {
             arreglo.print();
         }
-    //burbujaArriba se utiliza para mantener las propiedades del monticulo despues de insertar una nueva inpresion
-    /*public void ajustehaciaarriba(int index) {
-        int nodo = index;
-        int nodoPadre = (nodo - 1) / 2;
-        Impresion[] arreglo2=arreglo.getArray();
 
-        while (nodo > 0 && arreglo2[nodo].getId().compareTo(arreglo2[nodoPadre].getId()) > 0) {
-            intercambiar(nodo, nodoPadre);
-            nodo = nodoPadre;
-            nodoPadre = (nodo - 1) / 2;
-        }
-}
-
-    //burbujaAbajo se utiliza para mantener las propiedades del monticulo despues de eliminar la impresion con el identificador mas pequeño
-    private void ajustehaciaabajo(int nodo) {
-        while (2 * nodo + 1 < cima) {
-            int leftSon = 2 * nodo + 1;
-            int rightSon = 2 * nodo + 2;
-
-            if (rightSon < cima && arreglo[rightSon].compareTo(arreglo[leftSon]) < 0) {
-                leftSon = rightSon;
-            }
-            if (arreglo[nodo].compareTo(arreglo[leftSon]) > 0) {
-                intercambiar(nodo, leftSon);
-                nodo = leftSon;
-            } else {
-                return;
-            }
-            
-        }
-    }
-    
-     private void intercambiar(int nodo1, int nodo2) {
-        Objects.requireNonNull(arreglo.get(nodo1), "nodo1 es nulo");
-        Objects.requireNonNull(arreglo.get(nodo2), "nodo2 es nulo");
-        Impresion temp = arreglo.get(nodo1);
-        arreglo.set(nodo1,arreglo.get(nodo2));
-        arreglo.set(nodo2,temp);
-    }
-    /*private void intercambiar(int nodo1, int nodo2) {
-        Impresion temp = arreglo[nodo1];
-        arreglo[nodo1] = arreglo[nodo2];
-        arreglo[nodo2] = temp;
-    }*/
-    
-    
 }
     
 

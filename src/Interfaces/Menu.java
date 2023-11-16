@@ -181,6 +181,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_MostrarUsuariosActionPerformed
 
     private void MostrarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarColaActionPerformed
+       //purebas de la cola no se asusten
        NodoG nodo=monticulo.buscarPorNombre("jperez");
        nodo.getUsuario().crearDocumento("excel", 22);
        nodo.getUsuario().crearDocumento("asdr", 22);
