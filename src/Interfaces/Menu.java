@@ -212,7 +212,11 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_MostrarColaActionPerformed
 
     private void EliminarDocumentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarDocumentosActionPerformed
-            EliminarDocumentos v8 = new EliminarDocumentos(this);
+        if(monticulo.getUsuarios().getLength()==0){
+            JOptionPane.showMessageDialog(null, "No hay usuarios registrados");
+        }else{
+            EliminarDocumentos v8 = new EliminarDocumentos(this,monticulo);
+        }
     }//GEN-LAST:event_EliminarDocumentosActionPerformed
 
     /**

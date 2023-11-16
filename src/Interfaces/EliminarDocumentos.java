@@ -4,7 +4,10 @@
  */
 package Interfaces;
 
+import EDD.NodoG;
 import MonticuloBinario.MonticuloBinario;
+import javax.swing.JOptionPane;
+import Helpers.Helpers;
 
 /**
  *
@@ -18,14 +21,15 @@ public class EliminarDocumentos extends javax.swing.JFrame {
     /**
      * Creates new form ModificarDocumentos
      */
-    public EliminarDocumentos(Menu v1) {
+    public EliminarDocumentos(Menu v1,MonticuloBinario monticulo1) {
         initComponents();
         initComponents();
         this.v1=v1;
+        this.monticulo=monticulo1;
         v1.setVisible(false);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        this.monticulo=monticulo;
+        
     }
 
     /**
@@ -68,11 +72,23 @@ public class EliminarDocumentos extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, -1, -1));
-        getContentPane().add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 450, -1));
+
+        NombreUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreUsuarioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 86, 450, 30));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel2.setText("Ingrese el nombre del documento a eliminar:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, -1));
+
+        NombreDocumento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreDocumentoActionPerformed(evt);
+            }
+        });
         getContentPane().add(NombreDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 450, -1));
 
         EliminarDocumento.setText("Eliminar Documento");
@@ -97,6 +113,16 @@ public class EliminarDocumentos extends javax.swing.JFrame {
     private void EliminarDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarDocumentoActionPerformed
         String nombre_usuario = NombreUsuario.getText();
         String nombre_documento = NombreDocumento.getText();
+        NodoG nodo =monticulo.buscarPorNombre(nombre_usuario);
+        
+        if(nodo==null){
+            JOptionPane.showMessageDialog(null, "Usuario no encontrado");
+        }
+        if (nodo!=null ){
+            nodo.getUsuario().eliminarDocumento(nombre_documento);
+            }
+       
+       
     }//GEN-LAST:event_EliminarDocumentoActionPerformed
 
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
@@ -104,6 +130,14 @@ public class EliminarDocumentos extends javax.swing.JFrame {
         this.setVisible(false);
         menu.setVisible(true);
     }//GEN-LAST:event_MenuActionPerformed
+
+    private void NombreUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreUsuarioActionPerformed
+
+    private void NombreDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreDocumentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreDocumentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,7 +170,7 @@ public class EliminarDocumentos extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EliminarDocumentos(v1).setVisible(true);
+                new EliminarDocumentos(v1,monticulo).setVisible(true);
             }
         });
     }
