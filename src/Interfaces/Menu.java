@@ -47,6 +47,8 @@ public class Menu extends javax.swing.JFrame {
         Usuarios = new javax.swing.JButton();
         Archivos = new javax.swing.JButton();
         MostrarUsuarios = new javax.swing.JButton();
+        EliminarDocumentos = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,7 +64,7 @@ public class Menu extends javax.swing.JFrame {
                 CargarArchivoActionPerformed(evt);
             }
         });
-        jPanel1.add(CargarArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 180, -1));
+        jPanel1.add(CargarArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 180, -1));
 
         ModificarCola.setText("Modificar Cola");
         ModificarCola.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +72,7 @@ public class Menu extends javax.swing.JFrame {
                 ModificarColaActionPerformed(evt);
             }
         });
-        jPanel1.add(ModificarCola, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, 180, -1));
+        jPanel1.add(ModificarCola, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 180, -1));
 
         MostrarCola.setText("Cola de Impresion");
         MostrarCola.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +80,7 @@ public class Menu extends javax.swing.JFrame {
                 MostrarColaActionPerformed(evt);
             }
         });
-        jPanel1.add(MostrarCola, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, 180, -1));
+        jPanel1.add(MostrarCola, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 180, -1));
 
         EXIT.setText("Salir");
         EXIT.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +96,7 @@ public class Menu extends javax.swing.JFrame {
                 UsuariosActionPerformed(evt);
             }
         });
-        jPanel1.add(Usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 180, -1));
+        jPanel1.add(Usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 180, -1));
 
         Archivos.setText("Crear Documento");
         Archivos.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +104,7 @@ public class Menu extends javax.swing.JFrame {
                 ArchivosActionPerformed(evt);
             }
         });
-        jPanel1.add(Archivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 180, -1));
+        jPanel1.add(Archivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 180, -1));
 
         MostrarUsuarios.setText("Mostrar Usuarios");
         MostrarUsuarios.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +112,18 @@ public class Menu extends javax.swing.JFrame {
                 MostrarUsuariosActionPerformed(evt);
             }
         });
-        jPanel1.add(MostrarUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 180, -1));
+        jPanel1.add(MostrarUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 180, -1));
+
+        EliminarDocumentos.setText("Eliminar Documentos");
+        EliminarDocumentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarDocumentosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(EliminarDocumentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 180, -1));
+
+        jButton1.setText("Liberar Impresora");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, 180, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -198,6 +211,10 @@ public class Menu extends javax.swing.JFrame {
        
     }//GEN-LAST:event_MostrarColaActionPerformed
 
+    private void EliminarDocumentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarDocumentosActionPerformed
+            EliminarDocumentos v8 = new EliminarDocumentos(this);
+    }//GEN-LAST:event_EliminarDocumentosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -237,10 +254,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton Archivos;
     private javax.swing.JButton CargarArchivo;
     private javax.swing.JButton EXIT;
+    private javax.swing.JButton EliminarDocumentos;
     private javax.swing.JButton ModificarCola;
     private javax.swing.JButton MostrarCola;
     private javax.swing.JButton MostrarUsuarios;
     private javax.swing.JButton Usuarios;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
