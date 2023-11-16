@@ -4,6 +4,7 @@
  */
 package Interfaces;
 
+import EDD.NodoG;
 import MonticuloBinario.MonticuloBinario;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
@@ -180,7 +181,20 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_MostrarUsuariosActionPerformed
 
     private void MostrarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarColaActionPerformed
-       // MostrarCola v8 = new MostrarCola();
+       NodoG nodo=monticulo.buscarPorNombre("jperez");
+       nodo.getUsuario().crearDocumento("excel", 22);
+       nodo.getUsuario().crearDocumento("asdr", 22);
+       nodo.getUsuario().crearDocumento("asdrasdasd", 222);
+       monticulo.insertar(nodo.getUsuario().getDocumentos().getHead().getDocumento(),99999999);
+       monticulo.insertar(nodo.getUsuario().getDocumentos().getHead().getNext().getDocumento(),10000);
+       monticulo.insertar(nodo.getUsuario().getDocumentos().getHead().getNext().getNext().getDocumento(),99);
+       
+       monticulo.insertar(nodo.getUsuario().getDocumentos().getHead().getNext().getNext().getDocumento(),-99);
+       monticulo.insertar(nodo.getUsuario().getDocumentos().getHead().getNext().getNext().getDocumento(),1);
+       monticulo.getArreglo().delete();
+       monticulo.imprimirTodos();
+       
+       
     }//GEN-LAST:event_MostrarColaActionPerformed
 
     /**

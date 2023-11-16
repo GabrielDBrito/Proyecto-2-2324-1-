@@ -10,7 +10,7 @@ package MonticuloBinario;
  */
 public class ColaImpresion<T> {
     
-    private MonticuloBinario<Impresion> monticulo;
+   /* private MonticuloBinario<Impresion> monticulo;
 
     public ColaImpresion(int tamaño) {
         monticulo = new MonticuloBinario<>(tamaño);
@@ -34,5 +34,5 @@ public class ColaImpresion<T> {
     public boolean estaVacia() {
         return monticulo.cima == 0;
     }
-    
+    /**/
 }

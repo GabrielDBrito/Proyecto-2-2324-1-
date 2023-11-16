@@ -216,9 +216,9 @@ public class ListaG {
             NodoD pointer=temp.getUsuario().getDocumentos().getHead();
             while(pointer!=null){
                 if (pointer.getDocumento().isEncolado()){
-                documentos+="["+pointer.getDocumento().getNombre()+"(en cola)] ";
+                documentos+="["+pointer.getDocumento().getNombre()+" (en cola)]  ";
                 }else{
-                documentos+="["+pointer.getDocumento().getNombre()+"] ";
+                documentos+="["+pointer.getDocumento().getNombre()+"]  ";
                 }
                 pointer=pointer.getNext();
             }

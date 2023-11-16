@@ -4,24 +4,27 @@
  */
 package EDD;
 
+import MonticuloBinario.Documento;
+import MonticuloBinario.Impresion;
+
 /**
  *
  * @author Gabriel
  */
 public class NodoArray {
-    private Object element;
+    private Impresion element;
     private Integer next;
 
-    public NodoArray(Object element) {
+    public NodoArray(Impresion element) {
         this.element = element;
         this.next = null;
     }
 
-    public Object getElement() {
+    public Impresion getElement() {
         return element;
     }
 
-    public void setElement(Object element) {
+    public void setElement(Impresion element) {
         this.element = element;
     }
 

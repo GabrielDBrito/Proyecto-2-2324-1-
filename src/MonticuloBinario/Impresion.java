@@ -15,8 +15,8 @@ public class Impresion  implements Comparable<Impresion> {
     private Documento documento;
     private String prioridad;
     
-    public Impresion(Documento documento, String prioridad) {
-        this.id = 0;
+    public Impresion(Documento documento, String prioridad,int id) {
+        this.id = id;
         this.documento = documento;
         this.prioridad = prioridad;
     }
