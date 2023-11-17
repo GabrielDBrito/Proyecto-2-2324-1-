@@ -109,11 +109,15 @@ public class EliminarDocumentos extends javax.swing.JFrame {
         if (nodo==null){
             JOptionPane.showMessageDialog(null, "El usuario no ha sido encontrado");
         }else{
-            Documento documento =nodo.getUsuario().buscarDocumento(nombre_documento);
-            if(documento==null){
-                JOptionPane.showMessageDialog(null, "El documento indicado no ha sido encontrado");
+            if(nodo.getUsuario().getDocumentos().getLength()==0){
+                JOptionPane.showMessageDialog(null, "El usuario no tiene documentos creados");
             }else{
-                nodo.getUsuario().eliminarDocumento(nombre_documento);
+                Documento documento =nodo.getUsuario().buscarDocumento(nombre_documento);
+                if(documento==null){
+                    JOptionPane.showMessageDialog(null, "El documento indicado no ha sido encontrado");
+                }else{
+                    nodo.getUsuario().eliminarDocumento(nombre_documento);
+                }
             }
         }
     }//GEN-LAST:event_EliminarActionPerformed
