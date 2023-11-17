@@ -72,6 +72,7 @@ public class Usuario {
     
     /*
     Crea un documento y lo agrega a la lista de documentos del usuario
+    @param nombre, dimension
     */
     public void crearDocumento(String nombre, int dimension){
         Documento documento=new Documento(nombre, dimension, getTipo());
@@ -79,6 +80,10 @@ public class Usuario {
         JOptionPane.showMessageDialog(null, "Documento creado con exito");
     } 
     
+    /*
+    Busca un documento por su nombre y lo elimina si este no esta en la cola
+    @param nombre
+    */
     public void eliminarDocumento(String nombre){
         Documento documento=buscarDocumento(nombre);
         if (documento.isEncolado()){
@@ -89,6 +94,10 @@ public class Usuario {
         }
     }
     
+    /*
+    Muestra por pantalla todos los documentos del usuario
+    @param textArea
+    */
     public void mostrarDocumentos(JTextArea textArea) {
         NodoD temp = documentos.getHead();
         String documentos = "";

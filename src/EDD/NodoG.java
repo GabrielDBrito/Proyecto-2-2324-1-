@@ -10,7 +10,7 @@ import MonticuloBinario.Usuario;
 /**
  *
  * @author Gabriel
- * version 27/10/23
+ * version 17/11/23
  * Nodo que almacena usuarios
  */
 public class NodoG {

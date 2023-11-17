@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author Gabriel
+ * version 17/11/23
+ * Esta clase es una lista enlazada implementada como arreglo que almacena Objetos de tipo Impresion
  */
 
 public class ListaArray {
@@ -31,22 +33,18 @@ public class ListaArray {
     }
     
     
-    //inserta al final
-    public void add(Impresion obj) {
-        obj.getDocumento().setEncolado(true);
-        if (size == array.length) {
-            throw new IllegalStateException("Heap is full.");
-        }
-        array[size] = obj;
-        size++;
-        ajustehaciaarriba(size - 1);
-        }
-    
-
+    /*
+    Este metodo retorna el nodo en la posicion indicada
+    @param index
+    */
     public Impresion get(int index) {
         return array[index];
     }
     
+    /*
+    Este metodo establece el valor el nodo en la posicion indicada
+    @param index, newValue
+    */
     public void set(int index, Impresion newValue) {
     if (index >= size) {
         throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
@@ -58,7 +56,28 @@ public class ListaArray {
         return size;
     }
     
-    //borra el primero
+    public Impresion getLast() {
+        if (size == 0) {
+            return null;
+        }
+        return array[size - 1];
+    }
+    
+     /*inserta una impresion al final y reordena todo el arreglo, colocando el menor en la primer posicion
+      @param obj
+    */
+    public void add(Impresion obj) {
+        obj.getDocumento().setEncolado(true);
+        if (size == array.length) {
+            throw new IllegalStateException("Heap is full.");
+        }
+        array[size] = obj;
+        size++;
+        ajustehaciaarriba(size - 1);//ordena el monticulo
+        }
+    
+    /*borra el primer nodo (siempre es el menor) y reordena todo el arreglo, colocando el menor en la primer posicion
+    */
     public void delete() {
         if (size == 0) {
             throw new IllegalStateException("La lista está vacía.");
@@ -73,13 +92,23 @@ public class ListaArray {
         JOptionPane.showMessageDialog(null, "Documento impreso:\n"+borrado.getDocumento().getNombre());
     }
     
-    public Impresion getLast() {
+    //Este es el que hay q usar para borrar la impresion de la cola, el otro es para liberar o eliminar min
+    public void delete2() {
         if (size == 0) {
-            return null;
+            throw new IllegalStateException("La lista está vacía.");
         }
-        return array[size - 1];
-}
+        Impresion borrado=array[0];
+        array[0].getDocumento().setEncolado(false);
+        Impresion[] newArray = new Impresion[array.length - 1];
+        System.arraycopy(array, 1, newArray, 0, array.length - 1);
+        array = newArray;
+        size--;
+        ajustehaciaabajo(0);
+    }
     
+    /*
+    Muestra por consola el id de tdoos los documentos del arreglo en orden
+    */
     public void print() {
         for (int i = 0; i < size; i++) {
             System.out.println(array[i].getId());
@@ -87,12 +116,20 @@ public class ListaArray {
         System.out.println();
     }
     
+    /*
+    Intercambia dos nodos de posicion
+    @param i,j
+    */
     public void intercambiar(int i, int j) {
         Impresion temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
-
+    
+    /*
+    Reordena el monticulo para mantener sus propiedades (colocando el nodo con id mas bajo de primero)
+    @param indice
+    */
     public void ajustehaciaarriba(int indice) {
         while (indice > 0) {
         int indicePadre = (indice - 1) / 2;
@@ -101,9 +138,13 @@ public class ListaArray {
         }
         intercambiar(indice, indicePadre);
         indice = indicePadre;
-    }
+        }
     }
     
+    /*
+    Reordena el monticulo para mantener sus propiedades (colocando el nodo con id mas bajo de primero)
+    @param indice
+    */
     public void ajustehaciaabajo(int indice) {
          while (true) {
             int indiceHijoIzquierdo = 2 * indice + 1;

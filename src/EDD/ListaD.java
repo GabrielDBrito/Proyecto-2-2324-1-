@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author Gabriel
+ * version 17/11/23
  * Lista que almacena documentos
  */
 public class ListaD {
@@ -175,8 +176,8 @@ public class ListaD {
         }
     }
     
-    /*borrar nodo por id
-    *@param id
+    /*borrar nodo por nombre
+    *@param nombre
     *@return
     */
    public NodoD borrarPorNombre(String nombre){

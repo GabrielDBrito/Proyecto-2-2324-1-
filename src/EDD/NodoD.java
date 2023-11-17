@@ -9,6 +9,7 @@ import MonticuloBinario.Documento;
 /**
  *
  * @author Gabriel
+ * version 17/11/23
  * Nodo que almacena un documento
  */
 public class NodoD {

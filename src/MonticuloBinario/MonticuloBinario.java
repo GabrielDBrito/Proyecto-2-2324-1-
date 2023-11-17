@@ -5,17 +5,15 @@
 package MonticuloBinario;
 import EDD.ListaArray;
 import EDD.ListaG;
-import EDD.Nodo;
 import EDD.NodoG;
 import Helpers.Helpers;
 import ManejoArchivo.ManejoArchivo;
 import java.awt.HeadlessException;
-import java.util.Objects;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author abriel
+ * @author Gabriel
  * version 17/11/23
  */
 public class MonticuloBinario< T extends Comparable<T>>{
@@ -109,6 +107,7 @@ public class MonticuloBinario< T extends Comparable<T>>{
         }
         return encontrado;
     }
+    
     /*
     Agrega un usuario a la lista de usuarios luego de verificar que este es valido
     @param nombre, tipo
@@ -122,6 +121,7 @@ public class MonticuloBinario< T extends Comparable<T>>{
             JOptionPane.showMessageDialog(null, "Usuario agregado exitosamente");
         }
     }
+    
     /*
     Elimina un usuario por su nombre
     @param nombre
@@ -137,7 +137,11 @@ public class MonticuloBinario< T extends Comparable<T>>{
             //no se si falta algo referente a los documentos, creo q si
         } 
     }
-  
+    
+    /*
+    Crea una impresion y la inserta en el arreglo de impresiones (cola de prioridad)
+    @param documento
+    */
     public void insertar(Documento documento) {
         if (documento.getPrioridad().equalsIgnoreCase("prioridad_alta")){
             int numero=reloj.getValor()-90000;
@@ -158,10 +162,17 @@ public class MonticuloBinario< T extends Comparable<T>>{
         JOptionPane.showMessageDialog(null, "Documento agregado a la cola exitosamente");
     }
     
+    /*
+    Metodo de prueba para ver si se insertan bien las impresiones en el arreglo
+    imprime por consola los id de cadauna de las impresiones de la cola de prioridad
+    */
     public void imprimirTodos() {
             arreglo.print();
         }
     
+    /*
+    Metodo que elimina la impresion de menor id del arreglo (cola de prioridad)
+    */
     public void eliminar_min(){
         getArreglo().delete();
         

@@ -10,7 +10,7 @@ import javax.swing.JTextArea;
 /**
  *
  * @author Gabriel
- * version 13/11/23
+ * version 17/11/23
  * Lista de usuarios
  */
 public class ListaG {

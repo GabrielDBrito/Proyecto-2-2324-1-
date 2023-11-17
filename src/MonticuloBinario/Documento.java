@@ -7,6 +7,7 @@ package MonticuloBinario;
 /**
  *
  * @author Gabriel
+ * version 17/11/23
  */
 public class Documento {
     private String nombre;

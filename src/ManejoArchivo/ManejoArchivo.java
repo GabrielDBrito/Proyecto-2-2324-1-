@@ -9,7 +9,6 @@ import java.io.IOException;
 import javax.swing.JFileChooser;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import javax.swing.JOptionPane;
 import EDD.ListaG;
 import MonticuloBinario.Usuario;
 import java.awt.HeadlessException;
@@ -31,7 +30,6 @@ public class ManejoArchivo {
     /*
     Metodo encargado de permitirle al usuario elegir el archivo que desea cargar
     luego, guardar la informacion de dicho archivo en una lista
-    
     */
     public ListaG lecturaArchivo(){
         
@@ -63,12 +61,10 @@ public class ManejoArchivo {
                 linea=null;
                 return usuarios;
                 
-        } else{
-            
+        } else{    
             }
             return null;
-        }catch(HeadlessException | IOException e){
-            
+        }catch(HeadlessException | IOException e){     
             return null;
         }
     }
