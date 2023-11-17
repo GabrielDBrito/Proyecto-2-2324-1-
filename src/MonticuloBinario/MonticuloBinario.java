@@ -15,8 +15,8 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author luis, gabriel
- * version 10/11/23
+ * @author abriel
+ * version 17/11/23
  */
 public class MonticuloBinario< T extends Comparable<T>>{
     private ListaArray arreglo;
@@ -137,21 +137,7 @@ public class MonticuloBinario< T extends Comparable<T>>{
             //no se si falta algo referente a los documentos, creo q si
         } 
     }
-
-    //eliminarMin()elimina la impresion con el identificador mas pequeño del monticulo binario. 
-    //Se intercambia la impresion de la cima del monticulo con la impresion del ultimo elemento del arreglo
-    /*public Impresion eliminarMin() {
-        if (cima == 0) {
-            return null;
-        }
-        Impresion impresion = arreglo[0];
-        arreglo[0] = arreglo[--cima];
-        Ajustehaciaabajo(0);
-        impresion.getDocumento().setEncolado(false);
-        return impresion;
-    }/*/
-    
-     //insertar()agrega una nueva impresion al monticulo binario. Se inserta la impresion al final del arreglo
+  
     public void insertar(Documento documento) {
         if (documento.getPrioridad().equalsIgnoreCase("prioridad_alta")){
             int numero=reloj.getValor()-90000;
@@ -175,6 +161,11 @@ public class MonticuloBinario< T extends Comparable<T>>{
     public void imprimirTodos() {
             arreglo.print();
         }
+    
+    public void eliminar_min(){
+        getArreglo().delete();
+        
+    }
 
 }
     

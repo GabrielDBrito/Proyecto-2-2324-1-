@@ -124,6 +124,11 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(EliminarDocumentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 180, -1));
 
         jButton1.setText("Liberar Impresora");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 180, -1));
 
         MostrarDocumentos.setText("Mostrar Documentos");
@@ -202,7 +207,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_MostrarUsuariosActionPerformed
 
     private void MostrarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarColaActionPerformed
-       //purebas de la cola no se asusten
+       //pruebas de la cola no se asusten, esto se puede borrar
        /*NodoG nodo=monticulo.buscarPorNombre("jperez");
        nodo.getUsuario().crearDocumento("excel", 22);
        nodo.getUsuario().crearDocumento("asdr", 22);
@@ -216,7 +221,7 @@ public class Menu extends javax.swing.JFrame {
        monticulo.getArreglo().delete();
        monticulo.imprimirTodos();
        /*/
-
+       
     }//GEN-LAST:event_MostrarColaActionPerformed
 
     private void EliminarDocumentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarDocumentosActionPerformed
@@ -234,6 +239,15 @@ public class Menu extends javax.swing.JFrame {
         MostrarDocumentos v10 = new MostrarDocumentos(this,monticulo);
         }
     }//GEN-LAST:event_MostrarDocumentosActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        if(monticulo.getArreglo().getSize()==0){
+        JOptionPane.showMessageDialog(null, "La cola ya esta vacia");
+        }else{
+            monticulo.eliminar_min();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

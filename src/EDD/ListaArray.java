@@ -6,6 +6,7 @@ package EDD;
 
 import MonticuloBinario.Documento;
 import MonticuloBinario.Impresion;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -62,12 +63,14 @@ public class ListaArray {
         if (size == 0) {
             throw new IllegalStateException("La lista está vacía.");
         }
+        Impresion borrado=array[0];
         array[0].getDocumento().setEncolado(false);
         Impresion[] newArray = new Impresion[array.length - 1];
         System.arraycopy(array, 1, newArray, 0, array.length - 1);
         array = newArray;
         size--;
         ajustehaciaabajo(0);
+        JOptionPane.showMessageDialog(null, "Documento impreso:\n"+borrado.getDocumento().getNombre());
     }
     
     public Impresion getLast() {
