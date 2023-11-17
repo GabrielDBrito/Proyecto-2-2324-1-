@@ -197,9 +197,8 @@ public class Menu extends javax.swing.JFrame {
             frame.add(scrollPane, BorderLayout.CENTER);
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
-        //MostrarUsuarios v7 = new MostrarUsuarios(this);
-        });
-         }
+            });
+        }
     }//GEN-LAST:event_MostrarUsuariosActionPerformed
 
     private void MostrarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarColaActionPerformed
@@ -229,7 +228,11 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_EliminarDocumentosActionPerformed
 
     private void MostrarDocumentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarDocumentosActionPerformed
+        if(monticulo.getUsuarios().getLength()==0){
+            JOptionPane.showMessageDialog(null, "No hay usuarios registrados");
+        }else{
         MostrarDocumentos v10 = new MostrarDocumentos(this,monticulo);
+        }
     }//GEN-LAST:event_MostrarDocumentosActionPerformed
 
     /**

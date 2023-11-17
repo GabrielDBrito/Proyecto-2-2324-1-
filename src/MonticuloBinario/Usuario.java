@@ -6,9 +6,8 @@ package MonticuloBinario;
 
 import EDD.ListaD;
 import EDD.NodoD;
-import Helpers.Helpers;
-import java.lang.reflect.Field;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -88,6 +87,26 @@ public class Usuario {
         else{
             documentos.borrarPorNombre(nombre);
         }
+    }
+    
+    public void mostrarDocumentos(JTextArea textArea) {
+        NodoD temp = documentos.getHead();
+        String documentos = "";
+
+        while (temp != null) {   
+            documentos+= " Nombre: "+temp.getDocumento().getNombre()+"\n";
+            documentos+= " Tamaño: "+temp.getDocumento().getDimension()+"\n";
+            documentos+= " Prioridad: "+temp.getDocumento().getPrioridad()+"\n";
+            if(temp.getDocumento().isEncolado()){
+                documentos+= " En cola: SI\n";
+            }else{
+                documentos+= " En cola: NO\n";
+            }
+            documentos+="------------------------------------------------------------------------\n";
+            temp = temp.getNext();
+        }
+
+        textArea.setText(documentos);
     }
    
 }
