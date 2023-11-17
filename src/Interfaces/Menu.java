@@ -204,7 +204,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void MostrarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarColaActionPerformed
        //purebas de la cola no se asusten
-       NodoG nodo=monticulo.buscarPorNombre("jperez");
+       /*NodoG nodo=monticulo.buscarPorNombre("jperez");
        nodo.getUsuario().crearDocumento("excel", 22);
        nodo.getUsuario().crearDocumento("asdr", 22);
        nodo.getUsuario().crearDocumento("asdrasdasd", 222);
@@ -216,8 +216,8 @@ public class Menu extends javax.swing.JFrame {
        monticulo.insertar(nodo.getUsuario().getDocumentos().getHead().getNext().getNext().getDocumento(),1);
        monticulo.getArreglo().delete();
        monticulo.imprimirTodos();
-       
-       
+       /*/
+
     }//GEN-LAST:event_MostrarColaActionPerformed
 
     private void EliminarDocumentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarDocumentosActionPerformed

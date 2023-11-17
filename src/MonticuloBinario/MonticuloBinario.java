@@ -19,7 +19,6 @@ import javax.swing.JOptionPane;
  * version 10/11/23
  */
 public class MonticuloBinario< T extends Comparable<T>>{
-    //private Impresion[] arreglo;
     private ListaArray arreglo;
     public int cima;
     private ListaG usuarios;
@@ -28,7 +27,6 @@ public class MonticuloBinario< T extends Comparable<T>>{
     public MonticuloBinario(int tamaño) {
         //arreglo = new Impresion[tamaño];
         arreglo= new ListaArray(100);
-        cima = 0;
         this.usuarios=new ListaG();
         this.reloj=new Reloj();
     }
@@ -57,7 +55,15 @@ public class MonticuloBinario< T extends Comparable<T>>{
     public void setUsuarios(ListaG usuarios) {
         this.usuarios = usuarios;
     }
-    
+
+    public Reloj getReloj() {
+        return reloj;
+    }
+
+    public void setReloj(Reloj reloj) {
+        this.reloj = reloj;
+    }
+     
     
     /*
     Este metodo crea un nuevo usuario
@@ -162,8 +168,8 @@ public class MonticuloBinario< T extends Comparable<T>>{
             Impresion impresion = new Impresion(documento,documento.getPrioridad(),numero);
             arreglo.add(impresion);
         }
-
         documento.setEncolado(true);  
+        JOptionPane.showMessageDialog(null, "Documento agregado a la cola exitosamente");
     }
     
     public void imprimirTodos() {

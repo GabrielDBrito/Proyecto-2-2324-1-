@@ -4,7 +4,10 @@
  */
 package Interfaces;
 
+import EDD.NodoG;
+import MonticuloBinario.Documento;
 import MonticuloBinario.MonticuloBinario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -38,9 +41,9 @@ public class Agregar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         NombreUsuario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        EstadoPrioridad = new javax.swing.JTextField();
         Menu = new javax.swing.JButton();
         Agregar = new javax.swing.JButton();
+        NombreDocumento = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,12 +53,17 @@ public class Agregar extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel1.setText("Ingrese el nombre: ");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 130, 20));
+
+        NombreUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreUsuarioActionPerformed(evt);
+            }
+        });
         jPanel1.add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 590, -1));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel2.setText("Ingrese el estado de prioridad:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 200, -1));
-        jPanel1.add(EstadoPrioridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 590, -1));
+        jLabel2.setText("Ingrese el nombre del documento:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 270, -1));
 
         Menu.setText("Menu");
         Menu.addActionListener(new java.awt.event.ActionListener() {
@@ -73,6 +81,13 @@ public class Agregar extends javax.swing.JFrame {
         });
         jPanel1.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 110, -1));
 
+        NombreDocumento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreDocumentoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(NombreDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 590, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -88,7 +103,19 @@ public class Agregar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
-        // TODO add your handling code here:
+        String nombre_usuario = NombreUsuario.getText();
+        String nombre_documento = NombreDocumento.getText();
+        NodoG nodo=monticulo.buscarPorNombre(nombre_usuario);
+        if (nodo==null){
+            JOptionPane.showMessageDialog(null, "El usuario no ha sido encontrado");
+        }else{
+            Documento documento =nodo.getUsuario().buscarDocumento(nombre_documento);
+            if(documento==null){
+                JOptionPane.showMessageDialog(null, "El documento indicado no ha sido encontrado");
+            }else{
+                monticulo.insertar(documento);
+            }
+        }
     }//GEN-LAST:event_AgregarActionPerformed
 
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
@@ -96,6 +123,14 @@ public class Agregar extends javax.swing.JFrame {
         this.setVisible(false);
         menu.setVisible(true);
     }//GEN-LAST:event_MenuActionPerformed
+
+    private void NombreUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreUsuarioActionPerformed
+
+    private void NombreDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreDocumentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreDocumentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,8 +169,8 @@ public class Agregar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Agregar;
-    private javax.swing.JTextField EstadoPrioridad;
     private javax.swing.JButton Menu;
+    private javax.swing.JTextField NombreDocumento;
     private javax.swing.JTextField NombreUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

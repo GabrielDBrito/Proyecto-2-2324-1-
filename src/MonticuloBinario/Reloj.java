@@ -14,12 +14,12 @@ public class Reloj {
     public Reloj() {
         this.valor = 0;
         this.thread = new Thread(this::incrementar);
+        iniciar();
     }
 
     public void incrementar() {
         while (true) {
             this.valor += 1;
-            System.out.println(this.valor);
 
             try {
                 Thread.sleep(1000);

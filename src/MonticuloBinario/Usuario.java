@@ -63,7 +63,11 @@ public class Usuario {
                 encontrado=pointer;}
             pointer=pointer.getNext();
         }
-        return encontrado.getDocumento();
+        if (encontrado!=null){
+            return encontrado.getDocumento();
+        }else{
+            return null;
+        }
     }
     
     
@@ -83,7 +87,6 @@ public class Usuario {
         }
         else{
             documentos.borrarPorNombre(nombre);
-            JOptionPane.showMessageDialog(null, "El documento se encuentra en la cola de impresion\nPor esta razon no puede ser eliminado");
         }
     }
    
