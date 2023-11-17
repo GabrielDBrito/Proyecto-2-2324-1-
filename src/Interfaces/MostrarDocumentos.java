@@ -52,9 +52,11 @@ public class MostrarDocumentos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Ingrese el nombre de usuario para ver sus documentos:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
 
@@ -65,21 +67,23 @@ public class MostrarDocumentos extends javax.swing.JFrame {
         });
         jPanel1.add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 500, -1));
 
+        Mostrar.setForeground(new java.awt.Color(0, 51, 255));
         Mostrar.setText("Mostrar");
         Mostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MostrarActionPerformed(evt);
             }
         });
-        jPanel1.add(Mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, 110, -1));
+        jPanel1.add(Mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 90, 110, -1));
 
+        Menu.setForeground(new java.awt.Color(0, 51, 255));
         Menu.setText("Menu");
         Menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuActionPerformed(evt);
             }
         });
-        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 330, 70, -1));
+        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 300, 70, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -37,10 +37,12 @@ public class EliminarUsuarios extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setForeground(new java.awt.Color(153, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Ingrese el nombre de usuario a eliminar:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 446, -1));
 
@@ -51,6 +53,7 @@ public class EliminarUsuarios extends javax.swing.JFrame {
         });
         jPanel1.add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 620, -1));
 
+        Eliminar.setForeground(new java.awt.Color(0, 51, 255));
         Eliminar.setText("Eliminar");
         Eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,6 +62,7 @@ public class EliminarUsuarios extends javax.swing.JFrame {
         });
         jPanel1.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 150, -1));
 
+        Menu.setForeground(new java.awt.Color(0, 51, 255));
         Menu.setText("Menu");
         Menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

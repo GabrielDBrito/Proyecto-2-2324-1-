@@ -46,10 +46,12 @@ public class AgregarUsuario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Ingrese el nombre de usuario:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
 
@@ -60,7 +62,9 @@ public class AgregarUsuario extends javax.swing.JFrame {
         });
         jPanel1.add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 440, -1));
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Ingrese el tipo de prioridad: (Formato: prioridad_alta/media/baja)");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
@@ -71,6 +75,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
         });
         jPanel1.add(TipoPrioridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 610, -1));
 
+        Agregar.setForeground(new java.awt.Color(0, 51, 255));
         Agregar.setText("Agregar");
         Agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,13 +84,15 @@ public class AgregarUsuario extends javax.swing.JFrame {
         });
         jPanel1.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 90, -1));
 
+        Menu.setBackground(new java.awt.Color(255, 255, 255));
+        Menu.setForeground(new java.awt.Color(0, 51, 255));
         Menu.setText("Menu");
         Menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuActionPerformed(evt);
             }
         });
-        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(774, 400, 90, -1));
+        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 370, 90, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

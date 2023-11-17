@@ -46,104 +46,106 @@ public class Menu extends javax.swing.JFrame {
         EXIT = new javax.swing.JButton();
         Usuarios = new javax.swing.JButton();
         Archivos = new javax.swing.JButton();
-        MostrarUsuarios = new javax.swing.JButton();
         EliminarDocumentos = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         MostrarDocumentos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Pacific Blue Business Industry Logo  (1).png"))); // NOI18N
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 180, 180));
 
+        CargarArchivo.setBackground(new java.awt.Color(255, 255, 255));
+        CargarArchivo.setForeground(new java.awt.Color(0, 0, 204));
         CargarArchivo.setText("Cargar Archivo");
         CargarArchivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CargarArchivoActionPerformed(evt);
             }
         });
-        jPanel1.add(CargarArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 180, -1));
+        jPanel1.add(CargarArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 180, -1));
 
+        ModificarCola.setForeground(new java.awt.Color(0, 51, 255));
         ModificarCola.setText("Modificar Cola");
         ModificarCola.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ModificarColaActionPerformed(evt);
             }
         });
-        jPanel1.add(ModificarCola, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 180, -1));
+        jPanel1.add(ModificarCola, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 180, -1));
 
+        MostrarCola.setForeground(new java.awt.Color(0, 51, 255));
         MostrarCola.setText("Cola de Impresion");
         MostrarCola.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MostrarColaActionPerformed(evt);
             }
         });
-        jPanel1.add(MostrarCola, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 180, -1));
+        jPanel1.add(MostrarCola, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 180, -1));
 
+        EXIT.setForeground(new java.awt.Color(0, 51, 255));
         EXIT.setText("Salir");
         EXIT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EXITActionPerformed(evt);
             }
         });
-        jPanel1.add(EXIT, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 510, 70, -1));
+        jPanel1.add(EXIT, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 470, 70, -1));
 
+        Usuarios.setForeground(new java.awt.Color(0, 51, 255));
         Usuarios.setText("Usuarios");
         Usuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UsuariosActionPerformed(evt);
             }
         });
-        jPanel1.add(Usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 180, -1));
+        jPanel1.add(Usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 180, -1));
 
+        Archivos.setForeground(new java.awt.Color(0, 51, 255));
         Archivos.setText("Crear Documento");
         Archivos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ArchivosActionPerformed(evt);
             }
         });
-        jPanel1.add(Archivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 180, -1));
+        jPanel1.add(Archivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 180, -1));
 
-        MostrarUsuarios.setText("Mostrar Usuarios");
-        MostrarUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MostrarUsuariosActionPerformed(evt);
-            }
-        });
-        jPanel1.add(MostrarUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 180, -1));
-
+        EliminarDocumentos.setForeground(new java.awt.Color(0, 51, 255));
         EliminarDocumentos.setText("Eliminar Documentos");
         EliminarDocumentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EliminarDocumentosActionPerformed(evt);
             }
         });
-        jPanel1.add(EliminarDocumentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 180, -1));
+        jPanel1.add(EliminarDocumentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, 180, -1));
 
+        jButton1.setForeground(new java.awt.Color(0, 51, 255));
         jButton1.setText("Liberar Impresora");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 180, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 180, -1));
 
+        MostrarDocumentos.setForeground(new java.awt.Color(0, 51, 255));
         MostrarDocumentos.setText("Mostrar Documentos");
         MostrarDocumentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MostrarDocumentosActionPerformed(evt);
             }
         });
-        jPanel1.add(MostrarDocumentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, 180, -1));
+        jPanel1.add(MostrarDocumentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, 180, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 904, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 856, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,29 +184,6 @@ public class Menu extends javax.swing.JFrame {
             Archivos v6 = new Archivos(this,monticulo);
         }
     }//GEN-LAST:event_ArchivosActionPerformed
-    /*
-    Muestra por pantalla a todos los usuarios junto a sus atributos 
-    */
-    private void MostrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarUsuariosActionPerformed
-        
-        if (monticulo.getUsuarios().getHead()==null){
-            JOptionPane.showMessageDialog(null, "No hay usuarios registrados");
-        }else{
-        SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Usuarios");
-            frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-            frame.setSize(300, 400);
-
-            JTextArea textArea = new JTextArea();
-            monticulo.getUsuarios().mostrarNombresUsuarios(textArea);
-            textArea.setEditable(false);
-            JScrollPane scrollPane = new JScrollPane(textArea);
-            frame.add(scrollPane, BorderLayout.CENTER);
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
-            });
-        }
-    }//GEN-LAST:event_MostrarUsuariosActionPerformed
 
     private void MostrarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarColaActionPerformed
        //pruebas de la cola no se asusten, esto se puede borrar
@@ -292,7 +271,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton ModificarCola;
     private javax.swing.JButton MostrarCola;
     private javax.swing.JButton MostrarDocumentos;
-    private javax.swing.JButton MostrarUsuarios;
     private javax.swing.JButton Usuarios;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

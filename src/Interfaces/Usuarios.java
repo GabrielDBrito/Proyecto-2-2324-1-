@@ -44,9 +44,11 @@ public class Usuarios extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        AgregarUsuario.setForeground(new java.awt.Color(0, 51, 255));
         AgregarUsuario.setText("Agregar Usuario");
         AgregarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,6 +57,7 @@ public class Usuarios extends javax.swing.JFrame {
         });
         jPanel1.add(AgregarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 270, -1));
 
+        EliminarUsuario.setForeground(new java.awt.Color(0, 51, 255));
         EliminarUsuario.setText("Eliminar Usuario");
         EliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,13 +66,14 @@ public class Usuarios extends javax.swing.JFrame {
         });
         jPanel1.add(EliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 270, -1));
 
+        Menu.setForeground(new java.awt.Color(0, 51, 255));
         Menu.setText("Menu");
         Menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuActionPerformed(evt);
             }
         });
-        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 390, 90, -1));
+        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 360, 90, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

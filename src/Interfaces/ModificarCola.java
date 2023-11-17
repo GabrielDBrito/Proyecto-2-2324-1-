@@ -46,9 +46,11 @@ public class ModificarCola extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Agregar.setForeground(new java.awt.Color(0, 51, 255));
         Agregar.setText("Agregar");
         Agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,6 +59,7 @@ public class ModificarCola extends javax.swing.JFrame {
         });
         jPanel2.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 210, 30));
 
+        Eliminar.setForeground(new java.awt.Color(0, 51, 255));
         Eliminar.setText("Eliminar");
         Eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,13 +68,14 @@ public class ModificarCola extends javax.swing.JFrame {
         });
         jPanel2.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 210, 30));
 
+        Menu.setForeground(new java.awt.Color(0, 51, 255));
         Menu.setText("Menu");
         Menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuActionPerformed(evt);
             }
         });
-        jPanel2.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 100, -1));
+        jPanel2.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 380, 100, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 460));
 
