@@ -79,7 +79,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(ModificarCola, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 180, -1));
 
         MostrarCola.setForeground(new java.awt.Color(0, 51, 255));
-        MostrarCola.setText("Cola de Impresion");
+        MostrarCola.setText("Mostrar Cola");
         MostrarCola.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MostrarColaActionPerformed(evt);
@@ -186,20 +186,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_ArchivosActionPerformed
 
     private void MostrarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarColaActionPerformed
-       //pruebas de la cola no se asusten, esto se puede borrar
-       /*NodoG nodo=monticulo.buscarPorNombre("jperez");
-       nodo.getUsuario().crearDocumento("excel", 22);
-       nodo.getUsuario().crearDocumento("asdr", 22);
-       nodo.getUsuario().crearDocumento("asdrasdasd", 222);
-       monticulo.insertar(nodo.getUsuario().getDocumentos().getHead().getDocumento(),99999999);
-       monticulo.insertar(nodo.getUsuario().getDocumentos().getHead().getNext().getDocumento(),10000);
-       monticulo.insertar(nodo.getUsuario().getDocumentos().getHead().getNext().getNext().getDocumento(),99);
-       
-       monticulo.insertar(nodo.getUsuario().getDocumentos().getHead().getNext().getNext().getDocumento(),-99);
-       monticulo.insertar(nodo.getUsuario().getDocumentos().getHead().getNext().getNext().getDocumento(),1);
-       monticulo.getArreglo().delete();
-       monticulo.imprimirTodos();
-       /*/
+       Mostrar v11 = new Mostrar(this,monticulo);
        
     }//GEN-LAST:event_MostrarColaActionPerformed
 
