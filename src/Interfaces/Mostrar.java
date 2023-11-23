@@ -4,26 +4,28 @@
  */
 package Interfaces;
 
+import static Interfaces.ModificarCola.monticulo;
+import static Interfaces.ModificarCola.v1;
 import MonticuloBinario.MonticuloBinario;
 
 /**
  *
  * @author cesar
  */
-public class ModificarCola extends javax.swing.JFrame {
-    
+public class Mostrar extends javax.swing.JFrame {
     public static Menu v1;
     static MonticuloBinario monticulo;
 
-    public ModificarCola(Menu v1, MonticuloBinario monticulo) {
+    /**
+     * Creates new form MostrarCola
+     */
+    public Mostrar(Menu v1, MonticuloBinario monticulo) {
         initComponents();
         this.v1=v1;
         this.monticulo=monticulo;
         v1.setVisible(false);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
-        
-        
     }
 
     /**
@@ -36,37 +38,32 @@ public class ModificarCola extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        Agregar = new javax.swing.JButton();
-        Eliminar = new javax.swing.JButton();
+        MostrarArbol = new javax.swing.JButton();
+        MostrarCola = new javax.swing.JButton();
         Menu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
-        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Agregar.setForeground(new java.awt.Color(0, 51, 255));
-        Agregar.setText("Agregar");
-        Agregar.addActionListener(new java.awt.event.ActionListener() {
+        MostrarArbol.setForeground(new java.awt.Color(0, 51, 255));
+        MostrarArbol.setText("Mostrar Arbol");
+        MostrarArbol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarActionPerformed(evt);
+                MostrarArbolActionPerformed(evt);
             }
         });
-        jPanel2.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 210, 30));
+        jPanel1.add(MostrarArbol, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 180, 30));
 
-        Eliminar.setForeground(new java.awt.Color(0, 51, 255));
-        Eliminar.setText("Eliminar");
-        Eliminar.addActionListener(new java.awt.event.ActionListener() {
+        MostrarCola.setForeground(new java.awt.Color(0, 51, 255));
+        MostrarCola.setText("Mostrar Cola");
+        MostrarCola.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EliminarActionPerformed(evt);
+                MostrarColaActionPerformed(evt);
             }
         });
-        jPanel2.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 210, 30));
+        jPanel1.add(MostrarCola, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 180, 30));
 
         Menu.setForeground(new java.awt.Color(0, 51, 255));
         Menu.setText("Menu");
@@ -75,15 +72,13 @@ public class ModificarCola extends javax.swing.JFrame {
                 MenuActionPerformed(evt);
             }
         });
-        jPanel2.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 380, 100, -1));
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 460));
+        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, 70, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 741, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,20 +88,19 @@ public class ModificarCola extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
-        Agregar v4 = new Agregar(this, monticulo);
-    }//GEN-LAST:event_AgregarActionPerformed
-
-    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
-        Eliminar v5 = new Eliminar(this, monticulo);
-        
-    }//GEN-LAST:event_EliminarActionPerformed
+    private void MostrarArbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarArbolActionPerformed
+        MostrarArbol v13 = new MostrarArbol(this,monticulo);
+    }//GEN-LAST:event_MostrarArbolActionPerformed
 
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
         Menu menu = new Menu(monticulo);
         this.setVisible(false);
         menu.setVisible(true);
     }//GEN-LAST:event_MenuActionPerformed
+
+    private void MostrarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarColaActionPerformed
+        MostrarCola v12 = new MostrarCola(this,monticulo);
+    }//GEN-LAST:event_MostrarColaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,29 +119,29 @@ public class ModificarCola extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ModificarCola.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Mostrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ModificarCola.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Mostrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ModificarCola.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Mostrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ModificarCola.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Mostrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ModificarCola(v1, monticulo).setVisible(true);
+                new Mostrar(v1, monticulo).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Agregar;
-    private javax.swing.JButton Eliminar;
     private javax.swing.JButton Menu;
+    private javax.swing.JButton MostrarArbol;
+    private javax.swing.JButton MostrarCola;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
