@@ -99,7 +99,8 @@ public class Mostrar extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuActionPerformed
 
     private void MostrarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarColaActionPerformed
-        MostrarCola v12 = new MostrarCola(this,monticulo);
+        //MostrarCola v12 = new MostrarCola(this,monticulo);
+        monticulo.getArreglo().mostrar(monticulo);
     }//GEN-LAST:event_MostrarColaActionPerformed
 
     /**

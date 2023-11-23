@@ -6,7 +6,18 @@ package EDD;
 
 import MonticuloBinario.Documento;
 import MonticuloBinario.Impresion;
+import MonticuloBinario.MonticuloBinario;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.GridLayout;
+import java.util.Arrays;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -163,7 +174,40 @@ public class ListaArray {
             indice = indiceMenor;
         }
     }
-    
+    /*
+    Abre una pestaña nueva y muestra por pantalla la lista
+    @param monticulo
+    */
+    public void mostrar(MonticuloBinario monticulo) {
+            SwingUtilities.invokeLater(() -> {
+                JFrame frame = new JFrame("Cola de impresion");
+                frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+                frame.setSize(600, 100);
+                String string="\n   [";
+                ListaArray lista=monticulo.getArreglo();
+                int i=0;
+                while(lista.array[i]!=null){
+                    if(i!=0){
+                        string+="|";}
+                        string+=" "+lista.array[i].getDocumento().getNombre()+" ";
+                        i++;
+                    }
+                string+="]";
+
+
+                JTextArea textArea = new JTextArea();
+                textArea.setText(string);
+                textArea.setEditable(false);
+                textArea.setAlignmentX(Component.CENTER_ALIGNMENT);
+                textArea.setAlignmentY(Component.CENTER_ALIGNMENT);
+
+                JScrollPane scrollPane = new JScrollPane(textArea);
+                frame.add(scrollPane, BorderLayout.CENTER);
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+            });
+        
+   } 
 }
 
 

@@ -76,7 +76,7 @@ public class EliminarDocumentos extends javax.swing.JFrame {
         jPanel1.add(NombreDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 550, -1));
 
         Eliminar.setForeground(new java.awt.Color(0, 51, 255));
-        Eliminar.setText("EliminarDocumento");
+        Eliminar.setText("Eliminar Documento");
         Eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EliminarActionPerformed(evt);

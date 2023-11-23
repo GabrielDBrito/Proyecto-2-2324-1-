@@ -59,8 +59,7 @@ public class Menu extends javax.swing.JFrame {
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Interfaces/Pacific Blue Business Industry Logo  (1).png"))); // NOI18N
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 180, 180));
 
-        CargarArchivo.setBackground(new java.awt.Color(255, 255, 255));
-        CargarArchivo.setForeground(new java.awt.Color(0, 0, 204));
+        CargarArchivo.setForeground(new java.awt.Color(0, 51, 255));
         CargarArchivo.setText("Cargar Archivo");
         CargarArchivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,8 +185,11 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_ArchivosActionPerformed
 
     private void MostrarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarColaActionPerformed
-       Mostrar v11 = new Mostrar(this,monticulo);
-       
+       if (monticulo.getArreglo().getSize()==0){
+            JOptionPane.showMessageDialog(null, "La cola esta vacia");
+        }else{
+            Mostrar v11 = new Mostrar(this,monticulo);
+       }
     }//GEN-LAST:event_MostrarColaActionPerformed
 
     private void EliminarDocumentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarDocumentosActionPerformed

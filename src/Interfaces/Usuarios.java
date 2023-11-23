@@ -5,7 +5,12 @@
 package Interfaces;
 
 import MonticuloBinario.MonticuloBinario;
+import java.awt.BorderLayout;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -38,9 +43,10 @@ public class Usuarios extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        AgregarUsuario = new javax.swing.JButton();
+        MostrarUsuarios = new javax.swing.JButton();
         EliminarUsuario = new javax.swing.JButton();
         Menu = new javax.swing.JButton();
+        AgregarUsuario1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,14 +54,14 @@ public class Usuarios extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        AgregarUsuario.setForeground(new java.awt.Color(0, 51, 255));
-        AgregarUsuario.setText("Agregar Usuario");
-        AgregarUsuario.addActionListener(new java.awt.event.ActionListener() {
+        MostrarUsuarios.setForeground(new java.awt.Color(0, 51, 255));
+        MostrarUsuarios.setText("Mostrar Usuarios");
+        MostrarUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarUsuarioActionPerformed(evt);
+                MostrarUsuariosActionPerformed(evt);
             }
         });
-        jPanel1.add(AgregarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 270, -1));
+        jPanel1.add(MostrarUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 270, -1));
 
         EliminarUsuario.setForeground(new java.awt.Color(0, 51, 255));
         EliminarUsuario.setText("Eliminar Usuario");
@@ -64,7 +70,7 @@ public class Usuarios extends javax.swing.JFrame {
                 EliminarUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(EliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 270, -1));
+        jPanel1.add(EliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 270, -1));
 
         Menu.setForeground(new java.awt.Color(0, 51, 255));
         Menu.setText("Menu");
@@ -74,6 +80,15 @@ public class Usuarios extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 360, 90, -1));
+
+        AgregarUsuario1.setForeground(new java.awt.Color(0, 51, 255));
+        AgregarUsuario1.setText("Agregar Usuario");
+        AgregarUsuario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarUsuario1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(AgregarUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 270, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -89,9 +104,25 @@ public class Usuarios extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarUsuarioActionPerformed
-        AgregarUsuario v4 = new AgregarUsuario(this,monticulo);
-    }//GEN-LAST:event_AgregarUsuarioActionPerformed
+    private void MostrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarUsuariosActionPerformed
+        if (monticulo.getUsuarios().getHead()==null){
+            JOptionPane.showMessageDialog(null, "No hay usuarios registrados");
+        }else{
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Usuarios");
+            frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            frame.setSize(300, 400);
+
+            JTextArea textArea = new JTextArea();
+            monticulo.getUsuarios().mostrarNombresUsuarios(textArea);
+            textArea.setEditable(false);
+            JScrollPane scrollPane = new JScrollPane(textArea);
+            frame.add(scrollPane, BorderLayout.CENTER);
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+            });
+        }
+    }//GEN-LAST:event_MostrarUsuariosActionPerformed
 
     private void EliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarUsuarioActionPerformed
         if (monticulo.getUsuarios().getHead()==null){
@@ -106,6 +137,10 @@ public class Usuarios extends javax.swing.JFrame {
         this.setVisible(false);
         menu.setVisible(true);
     }//GEN-LAST:event_MenuActionPerformed
+
+    private void AgregarUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarUsuario1ActionPerformed
+        AgregarUsuario v4 = new AgregarUsuario(this,monticulo);
+    }//GEN-LAST:event_AgregarUsuario1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,9 +178,10 @@ public class Usuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AgregarUsuario;
+    private javax.swing.JButton AgregarUsuario1;
     private javax.swing.JButton EliminarUsuario;
     private javax.swing.JButton Menu;
+    private javax.swing.JButton MostrarUsuarios;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

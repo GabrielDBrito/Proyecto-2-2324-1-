@@ -78,7 +78,6 @@ public class Archivos extends javax.swing.JFrame {
         jLabel3.setText("Ingrese el tamaño del documento:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 230, 20));
 
-        CrearDocumento.setBackground(new java.awt.Color(255, 255, 255));
         CrearDocumento.setForeground(new java.awt.Color(0, 51, 255));
         CrearDocumento.setText("Crear Documento");
         CrearDocumento.addActionListener(new java.awt.event.ActionListener() {
