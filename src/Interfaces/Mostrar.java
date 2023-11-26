@@ -7,6 +7,7 @@ package Interfaces;
 import static Interfaces.ModificarCola.monticulo;
 import static Interfaces.ModificarCola.v1;
 import MonticuloBinario.MonticuloBinario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -89,7 +90,8 @@ public class Mostrar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MostrarArbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarArbolActionPerformed
-        MostrarArbol v13 = new MostrarArbol(this,monticulo);
+        //MostrarArbol v13 = new MostrarArbol(this,monticulo);
+        JOptionPane.showMessageDialog(null, "Esta funcion no ha sido implementada");
     }//GEN-LAST:event_MostrarArbolActionPerformed
 
     private void MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuActionPerformed
@@ -99,7 +101,7 @@ public class Mostrar extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuActionPerformed
 
     private void MostrarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarColaActionPerformed
-        //MostrarCola v12 = new MostrarCola(this,monticulo);
+        
         monticulo.getArreglo().mostrar(monticulo);
     }//GEN-LAST:event_MostrarColaActionPerformed
 

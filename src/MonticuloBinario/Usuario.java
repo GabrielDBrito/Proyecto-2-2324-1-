@@ -87,7 +87,7 @@ public class Usuario {
     public void eliminarDocumento(String nombre){
         Documento documento=buscarDocumento(nombre);
         if (documento.isEncolado()){
-            JOptionPane.showMessageDialog(null, "El documento se encuentra en la cola de impresion\nPor esta razon no puede ser eliminado");
+            JOptionPane.showMessageDialog(null, "El documento se encuentra en la cola de impresion\nPor esta razon, no puede ser eliminado");
         }
         else{
             documentos.borrarPorNombre(nombre);

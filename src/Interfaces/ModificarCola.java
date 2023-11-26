@@ -5,6 +5,7 @@
 package Interfaces;
 
 import MonticuloBinario.MonticuloBinario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -94,11 +95,20 @@ public class ModificarCola extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
+        if (monticulo.getUsuarios().getHead()==null){
+            JOptionPane.showMessageDialog(null, "No hay documentos registrados");
+        }else{
         Agregar v4 = new Agregar(this, monticulo);
+        }
     }//GEN-LAST:event_AgregarActionPerformed
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
-        Eliminar v5 = new Eliminar(this, monticulo);
+        if (monticulo.getUsuarios().getHead()==null){
+            JOptionPane.showMessageDialog(null, "No hay documentos registrados");
+        }else{
+            Eliminar v5 = new Eliminar(this, monticulo);
+        }
+        
         
     }//GEN-LAST:event_EliminarActionPerformed
 
